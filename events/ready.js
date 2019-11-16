@@ -11,9 +11,9 @@ module.exports = client => {
 console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
  client.user.setActivity("online");
   var oyun = [
-        "m!ayarlar => Eklendi",
-        "m!yardım",
-        "m!davet", 
+        "m!özel-hoşgeldin-ayarla (YAZI)",
+        "özel-görüşürüz-ayarla (YAZI)",
+        "m!yardım", 
         "m!bilgi",
         "7/24 Aktif.",
         '103 Sunucu İçin Teşekkürler'
@@ -23,6 +23,6 @@ console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.gu
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
-        client.user.setGame(oyun[random], "https://www.twitch.tv/asreaper13");
+        client.user.setGame(oyun[random], "https://topbots-tr.glitch.me/");
         }, 2 * 17000);
 }
