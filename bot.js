@@ -137,7 +137,7 @@ client.on("guildMemberAdd", async member => {
   let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
   let embed = new Discord.RichEmbed()
     .setTitle('Otorol Sistemi')
-    .setDescription(`<a:duyuru:565140840637399042>  <a:parti:606925584966090967>  @${member.user.tag}'a Otorol Verildi `)
+    .setDescription(`<a:duyur:635760218525138963> <a:parti:606925584966090967>  @${member.user.tag}'a Otorol Verildi `)
 .setColor("GREEN")
     .setFooter("Harmony ", client.user.avatarURL);
 
@@ -148,7 +148,7 @@ client.on("guildMemberAdd", async member => {
   try {
     let giriscikiskanalID = giriscikis[member.guild.id].kanal;
     let giriscikiskanali = client.guilds.get(member.guild.id).channels.get(giriscikiskanalID);
-    giriscikiskanali.send(`<a:duyuru:565140840637399042>  <a:onaylandI:586709716101496862> Hoşgeldin ``${member.user.tag}`` Rolün Başarıyla Verildi.`);
+    giriscikiskanali.send(`<a:duyur:635760218525138963> <a:evet:620544866807578635> Hoşgeldin ``${member.user.tag}`` Rolün Başarıyla Verildi.`);
   } catch (e) { // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
     return console.log(e)
   }
@@ -189,7 +189,7 @@ client.on("message", async msg => {
           }
       }
     }
-    else if (sa == 'kapali') {
+    else if (sa == 'acik') {
       
     }
     if (!sa) return;
@@ -228,21 +228,6 @@ client.on('message', msg => {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-
-client.on('guildMemberAdd', member=> {
-  const channel = member.guild.channels.find(ch => ch.name === 'sunucu');
-  if (!channel) return;
-  channel.send(`Sunucumuza Hoşgeldin, **${member.user.tag}** <a:parti:606925584966090967> Anlık Kullanıcı Sayımız:**${member.guild.memberCount}**`);
-});
-
-client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'sunucu');
-  if (!channel) return;
-  channel.send(`Aramızdan Ayrıldı, **${member.user.tag}**  <a:XXX:588397643017879583> Anlık Kullanıcı Sayımız:**${member.guild.memberCount}**`);
-});
-
-//////////////////////////////////////////////////////////////////////////////
- 
 client.on("guildMemberAdd", async member => {
   
   let sayac = await db.fetch(`sayac_${member.guild.id}`);
@@ -250,7 +235,7 @@ client.on("guildMemberAdd", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find('name', skanal9)
   if (!skanal31) return;
-  skanal31.send(`<a:indir:588402590262362112> \`${member.user.tag}\` adlı kullanıcı sunucuya katıldı. \`${sayac}\` kullanıcı olmaya \`${sayac - member.guild.members.size}\` kullanıcı kaldı.`)
+  skanal31.send(`<a:join:620550699629150208> \`${member.user.tag}\` adlı kullanıcı sunucuya katıldı. \`${sayac}\` kullanıcı olmaya \`${sayac - member.guild.members.size}\` kullanıcı kaldı.`)
 });
 
 client.on("guildMemberRemove", async member => {
@@ -260,7 +245,7 @@ client.on("guildMemberRemove", async member => {
   if (!skanal9) return;
   const skanal31 = member.guild.channels.find('name', skanal9)
   if (!skanal31) return;
-  skanal31.send(`<a:XXX:588397643017879583> \`${member.user.tag}\` adlı kullanıcı sunucudan ayrıldı. \`${sayac}\` kullanıcı olmaya \`${sayac - member.guild.members.size}\` kullanıcı kaldı.`)
+  skanal31.send(`<a:left:620550777576095754> \`${member.user.tag}\` Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` kullanıcı olmaya \`${sayac - member.guild.members.size}\` kullanıcı kaldı.`)
 });
 
 ////////////////////////
@@ -522,9 +507,8 @@ client.on('message', async msg => {
 				try {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
-          
 				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
-         .setTitle('TheOrder | Şarkı Seçimi')
+         .setTitle('MaximusBoys | Şarkı Seçimi')
          .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
          .setFooter('**1 veya 10 Arasında Şarkı Seç**')
          .setColor('0x36393E'));
@@ -674,7 +658,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(`<a:onaylandI:586709716101496862> **${song.title}** Adlı Müzik Kuyruğa Eklendi!`)
+    .setTitle(` **${song.title}** Adlı Müzik Kuyruğa Eklendi!`)
     .setColor('RANDOM'))
 	}
 	return undefined;
@@ -701,7 +685,7 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	 serverQueue.textChannel.sendEmbed(new Discord.RichEmbed()                                   
-  .setTitle("**TheOrder  Müzik Başladı**",`https://cdn.discordapp.com/avatars/473974675194511361/6bb90de9efe9fb80081b185266bb94a6.png?size=2048`)
+  .setTitle("**MaximusBoys  Müzik Başladı**",`https://cdn.discordapp.com/avatars/473974675194511361/6bb90de9efe9fb80081b185266bb94a6.png?size=2048`)
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg?width=80&height=60`)
   .addField('\nBaşlık', `[${song.title}](${song.url})`, true)
   .addField("\nSes Seviyesi", `${serverQueue.volume}%`, true)
@@ -749,7 +733,7 @@ client.on("guildMemberAdd", async member => {
   let giriscikis = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
   let embed = new Discord.RichEmbed()
     .setTitle('Otorol Sistemi')
-    .setDescription(`:loudspeaker:<a:onaylandI:586709716101496862> @${member.user.tag}'a Otorol Verildi `)
+    .setDescription(`:loudspeaker: @${member.user.tag}'a Otorol Verildi `)
 .setColor("GREEN")
     .setFooter("Harmony ", client.user.avatarURL);
 
@@ -813,15 +797,6 @@ client.on('guildMemberAdd', async member => {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-client.on('message', message => {
- if (message.content.toLowerCase() === '<@596415511068147722>') {
- message.delete();
- message.reply('Sahibim şuan meşgul, lütfen daha sonra ona ulaş.');
-}
- });
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 client.on('message', async message => {
   if (message.content.toLowerCase() === 'sa') {
@@ -829,7 +804,7 @@ client.on('message', async message => {
     if (premium == 'premium') {
       message.channel.send('Sunucunuzdaki `'+ message.author.username +'` adlı kişi **Premium Üye**')
     } else {
-      message.channel.send('Aleyküm Selam <a:sevgi:606924951408082984> **'+ message.author.username +'**')
+      message.channel.send('Aleyküm Selam İyi Eğlenceler <a:kalp:620610646719070208> **'+ message.author.username +'**')
     }
   }
 })
@@ -1251,27 +1226,6 @@ client.on("message", async msg => {
     
   }});
 
-       
-
-/////////////////////////////////////////////////////////////
-
-
-client.on('guildMemberAdd',async member => {
-  let user = client.users.get(member.id);
-  let chan = member.guild.channels.find('name', 'güvenlik') 
-  if (!chan) return;
-
-    const kurulus = new Date().getTime() - user.createdAt.getTime();
-    const gün = moment.duration(kurulus).format("D")   
-    var kontrol;
-    if (kurulus < 7) kontrol = 'Güvenilir Değil!'
-    if (kurulus > 7) kontrol = 'Güvenilir!'
-
-  chan.send('`'+ member.user.tag +'` sunucuya katıldı! Güvenilir mi? **'+ kontrol +'**')
-});
-
-/////////////////////////////////////////////////////////////
-
 
 /////////////////////////////////////////////////////////////
 
@@ -1325,7 +1279,7 @@ client.on('guildMemberAdd', async member => {
   const otorolmesaj = await db.fetch(`otorolm_${member.guild.id}`)
   
   member.addRole(rol2);
-  rolk2.send(otorolmesaj ? otorolmesaj.replace('{kullanıcı}', `${member.user}`) .replace('{rol}',`${rol2.name}`) : `<a:onaylandI:586709716101496862> \`${member.user.tag}\` adlı kullanıcıya \`${rol2.name}\` rolü verildi.`)
+  rolk2.send(otorolmesaj ? otorolmesaj.replace('{kullanıcı}', `${member.user}`) .replace('{rol}',`${rol2.name}`) : `<a:evet:620544866807578635> \`${member.user.tag}\` adlı kullanıcıya \`${rol2.name}\` rolü verildi.`)
 });
 
 client.on("guildMemberAdd", async member => {
@@ -1350,15 +1304,17 @@ if (prefix == null) prefix = 'm!'
 
 /////////////////////////////////////////////////////////////
 
-client.on("guildMemberRemove", async member => {
-  let prefix = await db.fetch(`prefix_${member.guild.id}`);
-if (prefix == null) prefix = 'm!'
-  let sayac = await db.fetch(`sayac_${member.guild.id}`);
-  let skanal = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!skanal) return;
-  const skanal2 = member.guild.channels.find('name', skanal)
-  const sayaccmesaj = await db.fetch(`sayaccm_${member.guild.id}`)
- skanal2.send(sayaccmesaj ? sayaccmesaj.replace('{kullanıcı}', `${member.user.tag}`) .replace('{sayı}', `${sayac}`) .replace('{kalan}', `${sayac - member.guild.members.size}`) : `:inbox_tray: \`${member.user.tag}\` adlı kullanıcı sunucudan ayrıldı. \`${sayac}\` kullanıcı olmaya \`${sayac - member.guild.members.size}\` kullanıcı kaldı. (\`${prefix}sayaç-çıkış-mesaj\` komutu ile değiştirilebilir.)`)
+client.on('message', async message => {
+    if (message.content === 'fakecık') {
+        client.emit('guildMemberRemove', message.member || await message.guild.fetchMember(message.author));
+    }
+});
+////////////
+
+client.on('message', async message => {
+    if (message.content === 'fake') {
+        client.emit('guildMemberAdd', message.member || await message.guild.fetchMember(message.author));
+    }
 });
 
 client.on("message", async msg => {
@@ -1578,3 +1534,181 @@ client.on("guildMemberRemove", async member => {
     })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var resimler = {
+  "cikis": "https://cdn.discordapp.com/attachments/606141048728846336/606141265360322561/New_Project_1_2_1.png",
+  "giris": "https://cdn.discordapp.com/attachments/606141048728846336/606141260243140628/New_Project_1_1.png",
+  "cikismanzara": "https://cdn.discordapp.com/attachments/606141048728846336/606742859177132032/Background_2.png",
+  "girismanzara": "https://cdn.discordapp.com/attachments/606141048728846336/606742856811413504/Background_1.png"
+}
+
+client.on("guildMemberAdd", async member => {
+var fetch = db.get(`sunucular.${member.guild.id}.giriscikis.kanal`)
+if(!fetch) return;
+var kanal = client.channels.get(fetch)
+if(!kanal) return;
+var tur = db.get(`sunucular.${member.guild.id}.giriscikis.tur`)
+if(!tur) return;
+
+if(tur === "klasik") {
+var avatarr = member.user.displayAvatarURL
+var { createCanvas, loadImage } = require('canvas')
+var canvas = createCanvas(1238,395)
+var ctx = canvas.getContext('2d');
+loadImage(resimler.giris).then(giris => {
+loadImage(avatarr).then(avatar => {
+ctx.drawImage(giris, 0, 0, 1238, 395);
+ctx.drawImage(avatar, 0, 0, 364, 395)
+
+ctx.beginPath()
+ctx.fillStyle = `#ffffff`;
+ctx.font = '50px Impact';
+ctx.textAlign = "left";
+ctx.fillText(`${member.user.tag}`, 400, 250)
+  
+kanal.send(new Discord.Attachment(canvas.toBuffer(), "MaximusBoys-giris.png"))
+})})
+} else if(tur === "manzara") {
+var avatarr = member.user.displayAvatarURL
+var { createCanvas, loadImage } = require('canvas')
+var canvas = createCanvas(960, 635)
+var ctx = canvas.getContext('2d');
+loadImage(resimler.girismanzara).then(giris => {
+loadImage(avatarr).then(avatar => {
+ctx.drawImage(giris, 0, 0, 960, 635);
+ctx.drawImage(avatar, 55, 90, 200, 200)
+
+var b = []
+member.user.username.split("").forEach(a => b.push(a))
+var isim;
+if(b.length > 20) isim = member.user.tag.substring(0,17) + "#" + member.user.discriminator
+else isim = member.user.tag
+  
+ctx.beginPath()
+ctx.fillStyle = `#ffffff`;
+ctx.font = '30px Impact';
+ctx.textAlign = "left";
+ctx.fillText(`${isim}`, 350, 180)
+  
+kanal.send(new Discord.Attachment(canvas.toBuffer(), "MaximusBoys-giris.png"))
+})})        
+} 
+})
+client.on('guildMemberAdd',async member => {
+  let user = client.users.get(member.id);
+  let kanal = client.channels.get(db.fetch(`guvenlik${member.guild.id}`)) 
+       const Canvas = require('canvas')
+       const canvas = Canvas.createCanvas(360,100);
+       const ctx = canvas.getContext('2d');
+  
+  const resim1 = await Canvas.loadImage('https://cdn.discordapp.com/attachments/597433546868654106/627428441695977497/gvnlk-spheli.png')
+    const resim2 = await Canvas.loadImage('https://cdn.discordapp.com/attachments/597433546868654106/627427731407241226/gvnlk-gvnli.png')
+    const kurulus = new Date().getTime() - user.createdAt.getTime();
+    const gün = moment(kurulus).format('dddd');  
+    var kontrol;
+      if (kurulus > 2629800000) kontrol = resim2
+    if (kurulus < 2629800000) kontrol = resim1
+
+       const background = await Canvas.loadImage('https://cdn.discordapp.com/attachments/597433546868654106/627425996454232064/gvnlk-arka.png');
+       ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+   
+
+  const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
+  ctx.drawImage(kontrol,0,0,canvas.width, canvas.height)
+  ctx.beginPath();
+    ctx.lineWidth = 4;
+  ctx.fill()
+    ctx.lineWidth = 4;
+  ctx.arc(180, 46, 36, 0, 2 * Math.PI);
+    ctx.clip();
+  ctx.drawImage(avatar, 143,10, 73, 72  );
+
+   
+       const attachment = new Discord.Attachment(canvas.toBuffer(), 'güvenlik.png');
+    kanal.send(attachment)
+});
+//////////////////////////   
+
+client.on(`guildMemberAdd`, async member => {
+  const e = new Discord.RichEmbed()
+    .setColor(`RANDOM`)
+    .setImage(`https://media.giphy.com/media/lnIv50U7cut3yUbpPJ/giphy.gif`)
+    .addField(`Sunucumuza geldiğin için teşekkür ederim!`, `MaximusBoys Bot iyi eğlenceler diler`)
+    .addField(`Davet Linkleri;`, `[Botu Sunucuna Eklemek İçin](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8)\n[Botun Destek Sunucusu](https://discord.gg/NHEhm93)`)
+    .setFooter(`Bu Sunucu 7/24 MaximusBoys tarafından korunuyor.`)
+  member.send(e);
+});
+////////////////////////////////////////////////////////////////////////////
+
+client.on("guildMemberAdd", async member => {
+let channel = client.channels.get("642623916044714005"); 
+channel.setName('Son Üyemiz: '+member.user.username)
+
+
+})
+
+////////////////////////////////////////////////////////////////////////////
+client.on("message", async message => {
+    let uyarisayisi = await db.fetch(`reklamuyari_${message.author.id}`);
+    let reklamkick = await db.fetch(`reklamkick_${message.guild.id}`)
+    let kullanici = message.member;
+    if (reklamkick == 'kapali') return;
+    if (reklamkick == 'acik') {
+        const reklam = ["discord.app", "discord.gg", "invite", "discordapp", "discordgg", ".com", ".net", ".xyz", ".tk", ".pw", ".io", ".me", ".gg", "www.", "https", "http", ".gl", ".org", ".com.tr", ".biz", ".party", ".rf.gd", ".az",];
+        if (reklam.some(word => message.content.toLowerCase().includes(word))) {
+            if (!message.member.hasPermission("ADMINISTRATOR")) {
+                message.delete();
+                db.add(`reklamuyari_${message.author.id}`, 1) //uyarı puanı ekleme
+                if (uyarisayisi === null) {
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> reklam kick sistemine yakalandın! Reklam yapmaya devam edersen kickleniceksin (1/3)`)
+                        .setTimestamp()
+                    message.channel.send(uyari)                
+}
+                if (uyarisayisi === 1) {
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> reklam kick sistemine yakalandın! Reklam yapmaya devam edersen kickleniceksin (2/3)`)
+                        .setTimestamp()
+                    message.channel.send(uyari)
+                }
+                if (uyarisayisi === 2) {
+                    message.delete();
+                    await kullanici.kick({
+                        reason: `Reklam kick sistemi`,
+                    })
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> 3 adet reklam uyarısı aldığı için kicklendi. Bir kez daha yaparsa banlanacakç`)
+                        .setTimestamp()
+                    message.channel.send(uyari)
+                }
+                if (uyarisayisi === 3) {
+                    message.delete();
+                    await kullanici.ban({
+                        reason: `Reklam ban sistemi`,
+                    })
+                    db.delete(`reklamuyari_${message.author.id}`)
+                    let uyari = new Discord.RichEmbed()
+                        .setColor("RANDOM")
+                        .setFooter('Reklam kick sistemi', client.user.avatarURL)
+                        .setDescription(`<@${message.author.id}> kick yedikten sonra tekrar devam ettiği için banlandı.`)
+                        .setTimestamp()
+                    message.channel.send(uyari)
+                }
+
+            }
+        }
+    }
+});
+
+const yourID = "456406598961856512"; //Instructions on how to get this: https://redd.it/40zgse //Kendi İD'nizi Yazın
+const setupCMD = "kayıtol" //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
+let initialMessage = ``; //Dilediğiniz Şeyi Yazabilirsiniz
+const roles = ['🏴󠁧󠁢󠁥󠁮󠁧󠁿Onbaşı🏴󠁧󠁢󠁥󠁮󠁧󠁿']; //İstediğiniz RolüYazabilirsiniz
+const reactions = ["🏴"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
+const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XUyXeQ.UkYlw3Z90B-TOIEA1pCipR6f878";  //Buraya botunuzun tokenini koyunuz
+                     
