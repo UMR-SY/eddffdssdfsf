@@ -15,9 +15,8 @@ console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.gu
         "m!yardım",
         "m!davet", 
         "m!bilgi",
-        "m!seviyeyardım",
         "7/24 Aktif.",
-        '43 Sunucu İçin Teşekkürler'
+        '103 Sunucu İçin Teşekkürler'
     ];
 
     setInterval(function() {
