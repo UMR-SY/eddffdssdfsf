@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
         .setTitle(`${client.user.username} - Komutlar`)
         .setDescription(`:small_orange_diamond: | **${ayarlar.prefix}yetkili** Yetkili Komutları.\n :small_orange_diamond: | **${ayarlar.prefix}kullanıcı** Kullanıcıya Komutları.\n :small_orange_diamond: |  **${ayarlar.prefix}eğlence** Eğlence Komutları.\n :small_orange_diamond: | **${ayarlar.prefix}ekstra** Ekstra Komutları.\n :small_orange_diamond: | **${ayarlar.prefix}müzik** Müzik Komutları.\n` + `:small_orange_diamond: | **${ayarlar.prefix}oyun**  Oyun Komutları Gösterir.\n` + `:small_orange_diamond: | **${ayarlar.prefix}seviyeyardım**  Seviyeyardım Komutları Gösterir.\n`)
         .setThumbnail(client.user.avatarURL)
-        .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8) **|** [Destek Sunucusu](https://discord.gg/NHEhm93) **|** [Web Sitesi](https://maximusboysbot.tr.gg/)`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
+        .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8) **|** [Destek Sunucusu](https://discord.gg/NHEhm93) **|** [Web Sitesi](https://topbots-tr.glitch.me/)`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
     return message.channel.sendEmbed(embed);
   
