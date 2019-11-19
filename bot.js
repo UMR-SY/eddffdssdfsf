@@ -1712,3 +1712,4 @@ const roles = ['🏴󠁧󠁢󠁥󠁮󠁧󠁿Onbaşı🏴󠁧󠁢󠁥󠁮󠁧󠁿
 const reactions = ["🏴"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
 const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XUyXeQ.UkYlw3Z90B-TOIEA1pCipR6f878";  //Buraya botunuzun tokenini koyunuz
                      
+
