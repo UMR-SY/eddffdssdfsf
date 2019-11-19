@@ -12,7 +12,7 @@ dependencies:
   discord-anti-spam-tr: 0.7.4
   discord.js: 11.5.1
   discord.js-commando: 0.10.0
-  ejs: 2.7.3
+  ejs: 2.7.2
   express: 4.17.1
   express-session: 1.16.2
   ffmpeg: 0.0.4
@@ -1397,13 +1397,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /ejs/2.7.3:
+  /ejs/2.7.2:
     dev: false
     engines:
       node: '>=0.10.0'
     requiresBuild: true
     resolution:
-      integrity: sha512-NtMNsdpaCF23gvHItgT37gzrpzckzs7KB7mg+YH1GMSG/5iZRq1BeWzAhEAJVagfM7nCQDnh/C51j/L2qjZmnA==
+      integrity: sha512-rHGwtpl67oih3xAHbZlpw5rQAt+YV1mSCu2fUZ9XNrfaGEhom7E+AUiMci+ByP4aSfuAWx7hE0BPuJLMrpXwOw==
   /encodeurl/1.0.2:
     dev: false
     engines:
@@ -4668,7 +4668,7 @@ specifiers:
   discord-anti-spam-tr: ^0.7.4
   discord.js: ^11.5.1
   discord.js-commando: ^0.10.0
-  ejs: ^2.7.3
+  ejs: ^2.7.2
   express: ^4.16.4
   express-session: ^1.16.1
   ffmpeg: ^0.0.4

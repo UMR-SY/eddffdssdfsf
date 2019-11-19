@@ -23,7 +23,7 @@
     "discord-anti-spam-tr": "^0.7.4",
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
-    "ejs": "^2.7.3",
+    "ejs": "^2.7.2",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
     "ffmpeg": "^0.0.4",
