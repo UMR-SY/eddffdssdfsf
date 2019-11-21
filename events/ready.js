@@ -23,6 +23,6 @@ console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.gu
 
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
-        client.user.setGame(oyun[random], "https://topbots-tr.glitch.me/");
-        }, 2 * 17000);
+        client.user.setGame(oyun[random], "https://www.twitch.tv/asreaper13");
+        }, 2 * 2000);
 }
