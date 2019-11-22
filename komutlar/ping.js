@@ -19,5 +19,5 @@ exports.conf = {
 exports.help = {
   name: 'ping',
   description: 'Ping komutudur.',
-  usage: '!ping'
+  usage: 'ping'
 }

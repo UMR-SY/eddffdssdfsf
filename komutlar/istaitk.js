@@ -10,9 +10,9 @@ exports.run = (client, message) => {
 
             .addField("Version", "0.0.6", true)
 
-            .addField("Toplam Sunucu Sayısı", 103, true)
+            .addField("Toplam Sunucu Sayısı", client.server.size, true)
 
-            .addField("Toplam Kullanıcı Sayısı", 38068, true)
+            .addField("Toplam Kullanıcı Sayısı", client.member.size, true)
             
             .addField("Toplam Kanal Sayısı", client.channels.size, true)
             

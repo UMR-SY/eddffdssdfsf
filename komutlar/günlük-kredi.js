@@ -33,6 +33,6 @@ exports.conf = {
 
 exports.help = {
   name: 'günlük-kredi',
-  açıklama: 'izinsiz paylaşmayın piçler hehe xd',
-  çalcanmı: 'çalarsan öperim seni! 👑CoderS Code Sharing👑'
+  açıklama: '',
+  çalcanmı: ''
 };
