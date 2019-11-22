@@ -83,7 +83,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'csgokasa aç',
+  name: 'kasaaç',
   description: 'CS:GO kasa açma simülasyonu',
   usage: 'kasaaç'
 };

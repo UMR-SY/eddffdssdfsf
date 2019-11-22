@@ -36,5 +36,5 @@ exports.conf = {
 exports.help = {
     name: 'bb-kanal',
     description: 'Çıkış Kanalını Ayarlar.',
-    usage: 'b!bb-kanal <#kanal>'
+    usage: 'bb-kanal <#kanal>'
 }

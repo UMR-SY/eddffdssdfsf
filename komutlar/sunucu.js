@@ -26,7 +26,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'sunucular',
+  name: 'sunuculistesi',
   description: 'sunuculistesi',
   usage: 'sunuculistesi'
 };
