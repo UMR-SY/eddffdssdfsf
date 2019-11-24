@@ -95,5 +95,5 @@ exports.conf = {
 exports.help = {
   name: 'kilit',
   description: 'Komutu kullandığın kanalı kilitler.',
-  usage: 'm!kilit'
+  usage: 'kilit'
 };
