@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   }
   if (args[0] == 'kapat') {
     db.set(`reklam_${message.guild.id}`, 'kapali') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onaylandI:586709716101496862> Reklam Filtresi Başarıyla Kapatıldı.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(' Reklam Filtresi Başarıyla Kapatıldı.').setColor("RANDOM"));
   
   } }
 
@@ -26,7 +26,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'reklam-filtresi',
+  name: 'reklam-filtre',
   description: 'Reklam Engelleme Sistemini Açar/Kapatır.',
   usage: 'reklam-filtresi <aç/kapat>'
 };
