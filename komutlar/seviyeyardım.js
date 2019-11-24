@@ -7,11 +7,11 @@ require("moment-duration-format");
 exports.run = (client, msg) => {
   const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   msg.channel.sendCode("Seviye Yardım  Komutları:",`
-m!seviye resim: Seviye'e Arka plan resim eklersin.
-m!seviye saydam: Seviyenize  Saydam Görüntü verisiniz.
-m!seviye renk: Seviyenize Renk Verisiniz.
-m!seviye ödül: Hangi Rol için Ödül Verecekseniz onu seç.
-m!seviye: Seviyenizi Gösterir.
+seviye resim: Seviye'e Arka plan resim eklersin.
+seviye saydam: Seviyenize  Saydam Görüntü verisiniz.
+Seviye renk: Seviyenize Renk Verisiniz.
+seviye ödül: Hangi Rol için Ödül Verecekseniz onu seç.
+seviye: Seviyenizi Gösterir.
 
 `);
 };
