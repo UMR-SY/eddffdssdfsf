@@ -11,10 +11,8 @@ module.exports = client => {
 console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
  client.user.setActivity("online");
   var oyun = [
-        "m!özel-hoşgeldin-ayarla (YAZI)",
-        "özel-görüşürüz-ayarla (YAZI)",
-        "m!yardım", 
-        "m!bilgi",
+        "m!radyo",
+        "m!müzik",
         "7/24 Aktif.",
         '111 Sunucu İçin Teşekkürler'
     ];
