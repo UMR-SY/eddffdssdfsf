@@ -52,9 +52,9 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'mod-log-ayarla',
+    name: 'log-ayarla',
     description: 'Moderasyon kayıtları kanalını ayarlar.',
-    usage: 'mod-log-ayarla <#kanal>',
+    usage: 'log-ayarla <#kanal>',
   enname: 'set-mod-log',
   endescription: 'The moderation records sets the channel.',
   enusage: 'set-mod-log <#channel>'
