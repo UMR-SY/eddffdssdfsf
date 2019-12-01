@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
   
-  var p = '!!'
+  var p = 'm!'
   
  const embed = new Discord.RichEmbed()
  .setAuthor(client.user.username, client.user.avatarURL)
