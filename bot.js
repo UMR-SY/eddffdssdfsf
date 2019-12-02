@@ -1177,7 +1177,7 @@ client.on("message", async message => {
       `Bot Bilgi Kanallarının kurulumu başlatılsın mı? başlatılacak ise **kabul** yazınız.`
     );
     if (!message.member.hasPermission("Yönetici"))
-      if (message.author.id !== "597118071811080222")
+      if (message.author.id !== "456406598961856512")
         return message.channel.send(
           " Bu Kodu `Yapımcım  Olan Kişi Kullanabilir."
         );
@@ -1465,7 +1465,7 @@ client.on("message", async message => {
             )
           );
 
-        message.channel.send("Gerekli Herşey Kuruldu Rahatına Bak!");
+        message.channel.send("Gerekli Herşey Kuruldu İyi Eğelenceler!");
       });
   }
 });
@@ -1761,7 +1761,7 @@ client.on("message", async msg => {
         console.log(err);
       }
     }
-  } else if (kufur == "kapali") {
+  } else if (kufur == "acik") {
   }
   if (!kufur) return;
 });
