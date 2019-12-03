@@ -14,7 +14,9 @@ console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.gu
         "m!radyo",
         "m!müzik",
         "7/24 Aktif.",
-        '111 Sunucu İçin Teşekkürler'
+        '122 Sunucu İçin Teşekkürler',
+        'Yetkili Olmak İsteyen',
+        '[MB]Asreaper#4920'
     ];
 
     setInterval(function() {

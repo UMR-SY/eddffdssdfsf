@@ -23,8 +23,8 @@
     "discord-anti-spam-tr": "^0.7.4",
     "discord.js": "^11.5.1",
     "discord.js-commando": "^0.10.0",
-    "ejs": "^2.7.3",
-    "express": "^4.16.4",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
     "express-session": "^1.16.1",
     "ffmpeg": "^0.0.4",
     "ffmpeg-binaries": "^4.0.0",
@@ -35,7 +35,7 @@
     "gifencoder": "^2.0.1",
     "google": "^2.1.0",
     "helmet": "^3.21.2",
-    "jimp": "^0.8.5",
+    "jimp": "^0.9.1",
     "js-base64": "^2.5.1",
     "js-robloxapi": "^1.0.6",
     "kratos": "^2.3.3",
@@ -64,11 +64,11 @@
     "sqlite": "^3.0.3",
     "steam-provider": "^0.2.0",
     "steamcommunity": "^3.41.2",
-    "superagent": "^5.1.0",
+    "superagent": "^5.1.2",
     "tcmb-doviz": "^1.0.5",
     "url": "^0.11.0",
     "weather-js": "^2.0.0",
-    "ytdl-core": "^1.0.0"
+    "ytdl-core": "^1.0.3"
   },
   "engines": {
     "node": "8.x"
