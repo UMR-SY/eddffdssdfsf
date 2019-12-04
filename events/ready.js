@@ -12,11 +12,11 @@ console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.gu
  client.user.setActivity("online");
   var oyun = [
         "m!radyo",
+        'Kesintiler Olabilir!',
         "m!müzik",
         "7/24 Aktif.",
-        '122 Sunucu İçin Teşekkürler',
-        'Yetkili Olmak İsteyen',
-        '[MB]Asreaper#4920'
+        '132 Sunucu İçin Teşekkürler'
+  
     ];
 
     setInterval(function() {
