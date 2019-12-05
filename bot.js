@@ -2055,11 +2055,6 @@ client.on(`guildMemberAdd`, async member => {
 });
 ////////////////////////////////////////////////////////////////////////////
 
-client.on("guildMemberAdd", async member => {
-  let channel = client.channels.get("642623916044714005");
-  channel.setName("Son Üyemiz: " + member.user.username);
-});
-
 ////////////////////////////////////////////////////////////////////////////
 client.on("message", async message => {
   let uyarisayisi = await db.fetch(`reklamuyari_${message.author.id}`);
