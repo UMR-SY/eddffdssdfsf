@@ -1610,7 +1610,7 @@ client.on("guildMemberAdd", async member => {
       ? otorolmesaj
           .replace("{kullanıcı}", `${member.user}`)
           .replace("{rol}", `${rol2.name}`)
-      : `<a:evet:620544866807578635> \`${member.user.tag}\` adlı kullanıcıya \`${rol2.name}\` rolü verildi.`
+      : `<a:ok:620544866807578635> \`${member.user.tag}\` adlı kullanıcıya \`${rol2.name}\` rolü verildi.`
   );
 });
 
