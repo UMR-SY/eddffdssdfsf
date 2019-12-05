@@ -926,6 +926,26 @@ client.on("guildMemberAdd", async member => {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+client.on("message", async message => {
+  if (message.content.toLowerCase() === "sa") {
+    let premium = await db.fetch(`flaiscode_premium_üye_${message.author.id}`);
+    if (premium == "premium") {
+      message.channel.send(
+        "Sunucunuzdaki `" +
+          message.author.username +
+          "` adlı kişi **Premium Üye**"
+      );
+    } else {
+      message.channel.send(
+        "Aleyküm Selam İyi Eğlenceler <a:kalp:620610646719070208> **" +
+          message.author.username +
+          "**"
+      );
+    }
+  }
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 client
   .on("guildBanAdd", async (guild, member) => {
     const embed = new Discord.RichEmbed()
@@ -1121,7 +1141,7 @@ client.on("guildDelete", guild => {
     .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.get("651030381776207892").send(rrrsembed);
+  client.channels.get("596965359295266839").send(rrrsembed);
 });
 
 client.on("guildCreate", guild => {
@@ -1135,7 +1155,7 @@ client.on("guildCreate", guild => {
     .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.get("651030381776207892").send(rrrsembed);
+  client.channels.get("596965448529215499").send(rrrsembed);
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1464,7 +1484,7 @@ client.on("guildBanAdd", async (guild, member) => {
     .setColor("RANDOM")
     .setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
     .setThumbnail(member.user.avatarURL)
-    .setFooter(`Maximus Boys Log Sistemi | ID: ${member.user.id}`)
+    .setFooter(`XiR Log Sistemi | ID: ${member.user.id}`)
     .setTimestamp();
   hgK.send({ embed });
 });
@@ -1481,7 +1501,7 @@ client.on("guildBanRemove", async (guild, member) => {
     .setColor("RANDOM")
     .setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
     .setThumbnail(member.user.avatarURL)
-    .setFooter(`Maximus Boys Log Sistemi | ID: ${member.user.id}`)
+    .setFooter(`XiR Log Sistemi | ID: ${member.user.id}`)
     .setTimestamp();
   hgK.send({ embed });
 });
@@ -2054,6 +2074,11 @@ client.on(`guildMemberAdd`, async member => {
   member.send(e);
 });
 ////////////////////////////////////////////////////////////////////////////
+
+client.on("guildMemberAdd", async member => {
+  let channel = client.channels.get("642623916044714005");
+  channel.setName("Son Üyemiz: " + member.user.username);
+});
 
 ////////////////////////////////////////////////////////////////////////////
 client.on("message", async message => {
