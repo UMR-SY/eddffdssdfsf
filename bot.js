@@ -244,10 +244,10 @@ client.on("guildMemberAdd", async member => {
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
   skanal31.send(
-    `<a:join:620550699629150208> \`${
+   ` \`${
       member.user.tag
-    }\` <a:join:620550699629150208> adlı kullanıcı sunucuya katıldı. \`${sayac}\` kullanıcı olmaya \`${sayac -
-      member.guild.members.size}\` kullanıcı kaldı.`
+    }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+      member.guild.members.size}\` Kullanıcı Kaldı.`
   );
 });
 
@@ -258,10 +258,10 @@ client.on("guildMemberRemove", async member => {
   const skanal31 = member.guild.channels.find("name", skanal9);
   if (!skanal31) return;
   skanal31.send(
-    `<a:left:620550777576095754> \`${
+    ` \`${
       member.user.tag
-    }\`<a:left:620550777576095754> Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` kullanıcı olmaya \`${sayac -
-      member.guild.members.size}\` kullanıcı kaldı.`
+    }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
+      member.guild.members.size}\` Kullanıcı Kaldı.`
   );
 });
 
