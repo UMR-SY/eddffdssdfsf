@@ -246,7 +246,7 @@ client.on("guildMemberAdd", async member => {
   skanal31.send(
     `<a:join:620550699629150208> \`${
       member.user.tag
-    }\` adlı kullanıcı sunucuya katıldı. \`${sayac}\` kullanıcı olmaya \`${sayac -
+    }\` <a:join:620550699629150208> adlı kullanıcı sunucuya katıldı. \`${sayac}\` kullanıcı olmaya \`${sayac -
       member.guild.members.size}\` kullanıcı kaldı.`
   );
 });
@@ -260,7 +260,7 @@ client.on("guildMemberRemove", async member => {
   skanal31.send(
     `<a:left:620550777576095754> \`${
       member.user.tag
-    }\` Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` kullanıcı olmaya \`${sayac -
+    }\`<a:left:620550777576095754> Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` kullanıcı olmaya \`${sayac -
       member.guild.members.size}\` kullanıcı kaldı.`
   );
 });
