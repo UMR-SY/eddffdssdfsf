@@ -1641,7 +1641,8 @@ client.on("guildMemberRemove", async member => {
     cmesaj
       ? cmesaj
           .replace("{kullanıcı}", `${member.user.tag}`)
-          .replace("{sunucu}", `${member.guild.name}`) Adlı Sunucudan Ayrıldı. (\`${prefix}çıkış-mesaj\` komutu ile değiştirilebilir.)`
+          .replace("{sunucu}", `${member.guild.name}`)
+      : `\`${member.user.tag}\` Adlı Kullanıcı \`${member.guild.name}\`Adlı Sunucudan Ayrıldı. (\`${prefix}çıkış-mesaj\` komutu ile değiştirilebilir.)`
   );
 });
 
