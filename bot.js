@@ -937,7 +937,7 @@ client.on("message", async message => {
       );
     } else {
       message.channel.send(
-        "Aleyküm Selam İyi Eğlenceler ,Nasılsın ? **" +
+        "Aleyküm Selam İyi Eğlenceler <a:kalp:620610646719070208> **" +
           message.author.username +
           "**"
       );
