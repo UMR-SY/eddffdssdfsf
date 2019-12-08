@@ -185,7 +185,7 @@ client.on("message", async msg => {
       msg.content.toLowerCase() == "selamun aleyküm"
     ) {
       try {
-        return msg.reply("Aleyküm Selam");
+        return msg.reply("Aleyküm Selam <a:kalp:620610646719070208>");
       } catch (err) {
         console.log(err);
       }
@@ -937,7 +937,7 @@ client.on("message", async message => {
       );
     } else {
       message.channel.send(
-        "Aleyküm Selam İyi Eğlenceler <a:kalp:620610646719070208> **" +
+        "Aleyküm Selam İyi Eğlenceler <a:kalp:620610646719070208>**" +
           message.author.username +
           "**"
       );
@@ -1141,7 +1141,7 @@ client.on("guildDelete", guild => {
     .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.get("596965359295266839").send(rrrsembed);
+  client.channels.get("651030381776207892").send(rrrsembed);
 });
 
 client.on("guildCreate", guild => {
@@ -1155,7 +1155,7 @@ client.on("guildCreate", guild => {
     .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.get("596965448529215499").send(rrrsembed);
+  client.channels.get("651030381776207892").send(rrrsembed);
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

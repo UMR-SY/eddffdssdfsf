@@ -1,40 +1,31 @@
-const Discord = require("discord.js");
-const moment = require("moment");
-require("moment-duration-format");
+const Discord = require('discord.js');
+const loglar = require('../loglar.json');
+
+var prefix = loglar.prefix;
+
+exports.run = async (client, message, params, args) => {
+
+  const yardım = new Discord.RichEmbed()
+  .setColor(0x36393E)
+      .setAuthor(``, client.user.avatarURL)
+      .setThumbnail(client.user.avatarURL)
+      .addField(`AloneBot - İstatistik`, `:small_orange_diamond: **Bellek kullanımı  :** ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\n:small_blue_diamond: **Kullanıcılar  :** ${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}\n:small_orange_diamond: **Sunucular  :** ${client.guilds.size.toLocaleString()}\n:small_blue_diamond: **Kanallar  :** ${client.channels.size.toLocaleString()}\n:small_orange_diamond: **Discord.js sürüm :** v${Discord.version}\n:small_blue_diamond: **Ping  :** ${Math.round(client.ping)} ms \n\n:cyclone: **Version  :** 0.0.5\n\n              **AloneBot ©**`)
+      .setFooter(`${message.author.username} tarafından istendi.`, message.author.avatarURL)
+  return message.channel.sendEmbed(yardım);
+
+};
 
 
-exports.run = (client, message) => {
   
-        const embed = new Discord.RichEmbed()
-            .addField("Sahibi", `<@584745121082245171>`, true)
-
-            .addField("Version", "0.0.6", true)
-
-            .addField("Toplam Sunucu Sayısı", client.server.size, true)
-
-            .addField("Toplam Kullanıcı Sayısı", client.member.size, true)
-            
-            .addField("Toplam Kanal Sayısı", client.channels.size, true)
-            
-            .addField("Çalışma Süresi", moment.duration(client.uptime).format('D [gün], H [saat], m [dakika], s [saniye]'), true)
-
-            .addField("Kitaplık Türü", "discord.js")
-        
-            .setColor(0x36393E)
-        
-            .setFooter(`${client.user.username} - Tüm hakları saklıdır.`, client.user.avatarURL)
-        return message.channel.sendEmbed(embed)
-};
-
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['bot durum', 'i', 'bi', 'istatistikler', 'kullanımlar', 'botdurum', 'bd', 'istatisik', 'stats', 'stat'],
-  permLevel: 0
-};
-
-exports.help = {
-  name: 'istatistik',
-  description: 'Botun istatistik gösterir.',
-  usage: 'istatistik'
-};
+    enabled: true,
+    guildOnly: false,
+    aliases: ["istatiskik","i","info","bilgi","İ","İstatistik","İSTATİSTİK","İNFO","İnfo","Bilgi","BİLGİ","bot durum","Botdurum","botdurum","bi","Bi","Bİ"],
+    permLevel: 0
+  };
+  
+  exports.help = {
+    name: 'istatistik',
+    description: 'Botun istatistiklerini gösterir.',
+    usage: 'istatistik'
+  };
