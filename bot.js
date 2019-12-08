@@ -1626,7 +1626,7 @@ client.on("guildMemberAdd", async member => {
       ? gmesaj
           .replace("{kullanıcı}", `${member.user}`)
           .replace("{sunucu}", `${member.guild.name}`)
-      : `\`${member.user.tag}\`<a:check_yes:647092902626983946>  Adlı Kullanıcı \`${member.guild.name}\` Adlı Sunucuya Katıldı. (\`${prefix}giriş-mesaj\` komutu ile değiştirilebilir.)`
+      : `\`${member.user.tag}\` Adlı Kullanıcı \`${member.guild.name}\` Adlı Sunucuya Katıldı. (\`${prefix}giriş-mesaj\` komutu ile değiştirilebilir.)`
   );
 });
 
