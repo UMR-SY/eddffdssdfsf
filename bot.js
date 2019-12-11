@@ -2176,3 +2176,33 @@ let initialMessage = ``; //Dilediğiniz Şeyi Yazabilirsiniz
 const roles = ["🏴󠁧󠁢󠁥󠁮󠁧󠁿Onbaşı🏴󠁧󠁢󠁥󠁮󠁧󠁿"]; //İstediğiniz RolüYazabilirsiniz
 const reactions = ["🏴"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
 const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XUyXeQ.UkYlw3Z90B-TOIEA1pCipR6f878"; //Buraya botunuzun tokenini koyunuz
+
+function vipA() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            client.channels.get(654324391282475009).setName(Yeni Devir Başlatma Zamanı);
+            vipB();
+        }, 2000);
+      });
+}
+
+  function vipB() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            client.channels.get(654324391282475009).setName(  );
+            vipC();
+        }, 2000);
+      });
+  }
+  function vipC() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            client.channels.get(654324391282475009).setName();
+            vipA();
+        }, 2000);
+      });
+  }
+ 
+ client.on('ready', async message => {
+   vipA();
+ })
