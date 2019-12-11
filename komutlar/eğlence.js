@@ -7,11 +7,10 @@ require("moment-duration-format");
 exports.run = (client, msg) => {
   const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   msg.channel.sendCode("Eğlence  Komutları:",`
-
+m!aşkölç: Aşkınızı Ölçersiniz.
 m!kafasalla: Kafa sallarsınız.
 m!kedi: Rastgele kedi gif atar.
 m!doğumgünü: Arkadasini Bilir.
-m!troll: Trol Resmi atar.
 m!yazıtura: Yazı-Tura atar.
 m!öp: iştediniz kişiyi öpersiniz.
 m!mcskin: Belirtilen oyuncunun kostümünü gösterir.

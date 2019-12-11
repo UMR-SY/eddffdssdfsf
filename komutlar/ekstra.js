@@ -7,9 +7,6 @@ require("moment-duration-format");
 exports.run = (client, msg) => {
   const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   msg.channel.sendCode("Ekstra  Komutları:",`
-m!atatürk-resimleri: Rastgele atatükr fotoğrafları atar.
-m!atasözü: Bot Tarafından Rasgele Atasözleri Gönderilir.
-m!ailemiz: Ailemizi Gösterir.
 m!davet-sıralaması: Sunucunuza en çok kullanıcı getirenleri sıralar.
 m!bunny: Yazınızı bunny yazısına dönüştürür.
 m!üyedurum: Üye Durumlarını ve sunucudaki üye sayısını gösterir

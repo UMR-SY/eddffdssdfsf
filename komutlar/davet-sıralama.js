@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     const embed = new Discord.RichEmbed()
         .setTitle(`**DAVET SIRALAMASİ**`)
         .setColor(0xCB5A5E)
-        .addField('Invites', `\`\`\`${possibleinvites.join('\n')}\`\`\``)
+        .addField('Davetler', `\`\`\`${possibleinvites.join('\n')}\`\`\``)
         .setTimestamp();
     message.channel.send(embed);
 }
