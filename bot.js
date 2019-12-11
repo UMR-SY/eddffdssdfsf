@@ -811,14 +811,14 @@ function play(guild, song) {
 /////////////////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", member => {
-  if (member.guild.id == "592024867810050051") {
+  if (member.guild.id == "651030381776207892") {
     console.log(
-      `${member.user.username} adlı kullanıcı destek sunucumuza katıldı :P`
+      `${member.user.username} Adlı Kullanıcı Destek Sunucumuza Katıldı`
     );
     client.channels
-      .get("594783627297030177")
+      .get("")
       .send(
-        `<@${member.id}> adlı kişi sunucumuza katıldı, seni karşılamaktan şeref duyarız :)`
+        `<@${member.id}> Adlı Kişi Sunucumuza Katıldı Hoşgeldin :)`
       );
     return;
   }
@@ -923,28 +923,6 @@ client.on("guildMemberAdd", async member => {
   if (tag == null) tagyazi = member.setNickname(`${member.user.username}`);
   else tagyazi = member.setNickname(`${tag} ${member.user.username}`);
 });
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-client.on("message", async message => {
-  if (message.content.toLowerCase() === "sa") {
-    let premium = await db.fetch(`flaiscode_premium_üye_${message.author.id}`);
-    if (premium == "premium") {
-      message.channel.send(
-        "Sunucunuzdaki `" +
-          message.author.username +
-          "` adlı kişi **Premium Üye**"
-      );
-    } else {
-      message.channel.send(
-        "Aleyküm Selam İyi Eğlenceler <a:kalp:620610646719070208>**" +
-          message.author.username +
-          "**"
-      );
-    }
-  }
-});
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 client
   .on("guildBanAdd", async (guild, member) => {
@@ -1671,7 +1649,6 @@ client.on("message", async msg => {
   let reklam = await db.fetch(`reklam_${msg.guild.id}`);
   if (reklam == "acik") {
     const reklam = [
-      ".com",
       ".net",
       ".xyz",
       ".tk",
