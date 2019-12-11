@@ -2076,7 +2076,7 @@ client.on(`guildMemberAdd`, async member => {
 ////////////////////////////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", async member => {
-  let channel = client.channels.get("642623916044714005");
+  let channel = client.channels.get("654324391282475009");
   channel.setName("Son Üyemiz: " + member.user.username);
 });
 
