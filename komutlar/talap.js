@@ -48,5 +48,5 @@ exports.conf = {
 exports.help = {
   name: 'talep',
   description: 'Destek talebi açar.',
-  usage: '!!talep'
+  usage: 'talep'
 };

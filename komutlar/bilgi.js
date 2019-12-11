@@ -22,6 +22,6 @@ exports.conf = {
 };
 exports.help = {
   name: 'bilgi',
-  description: 'Tüm komutları gösterir.',
+  description: '.',
   usage: 'bilgi'
 };

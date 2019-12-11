@@ -11,11 +11,11 @@ module.exports = client => {
 console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
  client.user.setActivity("online");
   var oyun = [
+             
         "m!radyo",
-        'Kesintiler Olabilir!',
         "m!müzik",
         "7/24 Aktif.",
-        '132 Sunucu İçin Teşekkürler'
+        '124 Sunucu |Maximus Boys'
   
     ];
 
