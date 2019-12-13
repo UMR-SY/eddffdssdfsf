@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
   db.set(`otorol_${message.guild.id}`, rol.name)
   db.set(`rolK_${message.guild.id}` ,rolk.name)
   
-    message.channel.send(` Otorol \`${rol.name}\`, otorol kanalı #${rolk.name} olarak ayarlandı.`)
+    message.channel.send(`<a:onaylandI:586709716101496862> Otorol \`${rol.name}\`, otorol kanalı #${rolk.name} olarak ayarlandı.`)
   
   };
 

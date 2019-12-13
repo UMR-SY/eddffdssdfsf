@@ -185,7 +185,7 @@ client.on("message", async msg => {
       msg.content.toLowerCase() == "selamun aleyküm"
     ) {
       try {
-        return msg.reply("Aleyküm Selam Heşgeldin");
+        return msg.reply("Aleyküm Selam <a:kalp:620610646719070208>");
       } catch (err) {
         console.log(err);
       }
@@ -2146,11 +2146,11 @@ client.on("message", async message => {
     }
   }
 });
-////////////////////////////////////////////////////////////////////////////////
-const yourID = "456406598961856512"; //
-const setupCMD = "js"; //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
-let initialMessage = `Tı`; //Dilediğiniz Şeyi Yazabilirsiniz
-const roles = ["654962064439246878"]; //İstediğiniz RolüYazabilirsiniz
-const reactions = ["🟢,🟢"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
-const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XezPfA.lSnCRw8io8rg6e_GfNE6TxCr7L4"; //Buraya botunuzun tokenini koyunuz
+
+const yourID = "456406598961856512"; //Instructions on how to get this: https://redd.it/40zgse //Kendi İD'nizi Yazın
+const setupCMD = "kayıtol"; //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
+let initialMessage = ``; //Dilediğiniz Şeyi Yazabilirsiniz
+const roles = ["🏴󠁧󠁢󠁥󠁮󠁧󠁿Onbaşı🏴󠁧󠁢󠁥󠁮󠁧󠁿"]; //İstediğiniz RolüYazabilirsiniz
+const reactions = ["🏴"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
+const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XUyXeQ.UkYlw3Z90B-TOIEA1pCipR6f878"; //Buraya botunuzun tokenini koyunuz
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
