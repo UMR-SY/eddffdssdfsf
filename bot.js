@@ -2146,11 +2146,11 @@ client.on("message", async message => {
     }
   }
 });
-
-const yourID = "654962064439246878"; //
-const setupCMD = "kayıtol"; //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
-let initialMessage = `JS/Geliştirimci Rolü Almak İçin Tkla!`; //Dilediğiniz Şeyi Yazabilirsiniz
-const roles = ["󠁧󠁢󠁥󠁮󠁧󠁧󠁢󠁥󠁮󠁧󠁿🟢 | Geliştirimci"]; //İstediğiniz RolüYazabilirsiniz
-const reactions = ["🟢"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
+////////////////////////////////////////////////////////////////////////////////
+const yourID = "456406598961856512"; //
+const setupCMD = "js"; //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
+let initialMessage = `Tı`; //Dilediğiniz Şeyi Yazabilirsiniz
+const roles = ["654962064439246878"]; //İstediğiniz RolüYazabilirsiniz
+const reactions = ["🟢,🟢"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
 const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XezPfA.lSnCRw8io8rg6e_GfNE6TxCr7L4"; //Buraya botunuzun tokenini koyunuz
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
