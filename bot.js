@@ -2147,10 +2147,3 @@ client.on("message", async message => {
   }
 });
 
-const yourID = "456406598961856512"; //Instructions on how to get this: https://redd.it/40zgse //Kendi İD'nizi Yazın
-const setupCMD = "kayıtol"; //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
-let initialMessage = ``; //Dilediğiniz Şeyi Yazabilirsiniz
-const roles = ["🏴󠁧󠁢󠁥󠁮󠁧󠁿Onbaşı🏴󠁧󠁢󠁥󠁮󠁧󠁿"]; //İstediğiniz RolüYazabilirsiniz
-const reactions = ["🏴"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
-const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XUyXeQ.UkYlw3Z90B-TOIEA1pCipR6f878"; //Buraya botunuzun tokenini koyunuz
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
