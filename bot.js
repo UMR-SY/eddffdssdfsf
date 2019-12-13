@@ -1927,7 +1927,7 @@ client.on("guildMemberRemove", async member => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var resimler = {
   cikis:
-    "https://cdn.discordapp.com/attachments/347767717819973634/614013293748813844/girissss.png",
+    "https://cdn.discordapp.com/attachments/606141048728846336/606141265360322561/New_Project_1_2_1.png",
   giris:
     "https://cdn.discordapp.com/attachments/606141048728846336/606141260243140628/New_Project_1_1.png",
   cikismanzara:
@@ -2147,3 +2147,10 @@ client.on("message", async message => {
   }
 });
 
+const yourID = "456406598961856512"; //Instructions on how to get this: https://redd.it/40zgse //Kendi İD'nizi Yazın
+const setupCMD = "kayıtol"; //İstediğiniz Komut Yapabilirsiniz örn : !kayıtol
+let initialMessage = ``; //Dilediğiniz Şeyi Yazabilirsiniz
+const roles = ["🏴󠁧󠁢󠁥󠁮󠁧󠁿Onbaşı🏴󠁧󠁢󠁥󠁮󠁧󠁿"]; //İstediğiniz RolüYazabilirsiniz
+const reactions = ["🏴"]; //İstediğiniz Emojiyi Ekleyebilirsiniz
+const botToken = "NjAyMDI0NTAxNzEwMTU5ODgy.XUyXeQ.UkYlw3Z90B-TOIEA1pCipR6f878"; //Buraya botunuzun tokenini koyunuz
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
