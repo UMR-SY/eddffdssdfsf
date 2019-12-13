@@ -1929,7 +1929,7 @@ var resimler = {
   cikis:
     "https://cdn.discordapp.com/attachments/606141048728846336/606141265360322561/New_Project_1_2_1.png",
   giris:
-    "https://cdn.discordapp.com/attachments/347767717819973634/614013293748813844/girissss.png",
+    "https://cdn.discordapp.com/attachments/606141048728846336/606141260243140628/New_Project_1_1.png",
   cikismanzara:
     "https://cdn.discordapp.com/attachments/606141048728846336/606742859177132032/Background_2.png",
   girismanzara:
