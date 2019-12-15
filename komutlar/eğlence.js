@@ -1,35 +1,32 @@
-const Discord = require("discord.js");
-const moment = require("moment");
-var green = process.env.NODE_DISABLE_COLORS ? '' : '\x1b[32m';
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
 
-require("moment-duration-format");
+let botid = ('602024501710159882') //bu yere botun id'sini yapıştırın.
+//eğer botunuz dbl(discord bot list) de yoksa Bota Oy Ver (Vote) olmucaktır.
 
-exports.run = (client, msg) => {
-  const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
-  msg.channel.sendCode("Eğlence  Komutları:",`
-m!aşkölç: Aşkınızı Ölçersiniz.
-m!kafasalla: Kafa sallarsınız.
-m!kedi: Rastgele kedi gif atar.
-m!doğumgünü: Arkadasini Bilir.
-m!yazıtura: Yazı-Tura atar.
-m!öp: iştediniz kişiyi öpersiniz.
-m!mcskin: Belirtilen oyuncunun kostümünü gösterir.
-m!tekme-at: İstediğiniz Kişiye tekme Atarsınız.
-m!nahçek: İstediğiniz Kişiye Çekiç Atarsınız.
-m!düello: İstediğiniz bir kişi ile düello atarsınız.
-
-`);
+exports.run = (client, message, args) => {
+    const embed = new Discord.RichEmbed()
+        .setAuthor(`${client.user.username} `, client.user.avatarURL)
+        .setColor('0x36393E')
+        .setTitle(`${client.user.username} - Komutlar`)
+        .setDescription(`:small_orange_diamond: | **${ayarlar.prefix}türk** Yetkili Komutları.\n :small_orange_diamond: | **${ayarlar.prefix}kullanıcı** Kullanıcıya Komutları.\n :small_orange_diamond: |  **${ayarlar.prefix}eğlence** Eğlence Komutları.\n :small_orange_diamond: | **${ayarlar.prefix}ekstra** Ekstra Komutları.\n :small_orange_diamond: | **${ayarlar.prefix}müzik** Müzik Komutları.\n` + `:small_orange_diamond: | **${ayarlar.prefix}oyun**  Oyun Komutları Gösterir.\n` + `:small_orange_diamond: | **${ayarlar.prefix}seviyeyardım**  Seviyeyardım Komutları Gösterir.\n`)
+        .setThumbnail(client.user.avatarURL)
+        .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8) **|** [Destek Sunucusu](https://discord.gg/aEUfsU9) **|** [Web Sitesi](https://topbots-tr.glitch.me/)`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
+        .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
+    return message.channel.sendEmbed(embed);
+  
+  
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
-  permLevel: 0
+  aliases: ['help'],
+  permLevel: 0,
 };
 
 exports.help = {
   name: 'eğlence',
-  description: 'Tüm komutları listeler. İsterseniz bir komut hakkında yardım eder..',
-  usage: 'eğlence'
+  description: '',
+  usage: ''
 };

@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     const op = new Discord.RichEmbed()
     .setDescription(`**NE MUTLU TÜRKÜM DİYENE!** :flag_tr:`)
     .setColor('RANDOM')
-    .setImage(gifler)
+    .setImage('https://media.giphy.com/media/yDm4Ry6XU77Py/giphy.gif', 'https://media1.tenor.com/images/6052fceee3bab1c98cde4e590c8be111/tenor.gif?itemid=11841187')
     .setFooter(`MaximusBoysBOT`)
     return message.channel.send(op)
     }
