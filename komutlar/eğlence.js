@@ -26,7 +26,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'eğlence',
+  name: 'kullanıcı',
   description: '',
   usage: ''
 };
