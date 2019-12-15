@@ -1,32 +1,40 @@
-const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
+const Discord = require("discord.js");
+const moment = require("moment");
+var green = process.env.NODE_DISABLE_COLORS ? '' : '\x1b[32m';
 
-let botid = ('602024501710159882') //bu yere botun id'sini yapıştırın.
-//eğer botunuz dbl(discord bot list) de yoksa Bota Oy Ver (Vote) olmucaktır.
+require("moment-duration-format");
 
-exports.run = (client, message, args) => {
-    const embed = new Discord.RichEmbed()
-        .setAuthor(`${client.user.username} `, client.user.avatarURL)
-        .setColor('0x36393E')
-        .setTitle(`${client.user.username} - Komutlar`)
-        .setDescription(`:small_orange_diamond: | **${ayarlar.prefix}istatistik** Botun İstatistiğini Görürsünüz \n :small_orange_diamond: | **${ayarlar.prefix}türk** Şanlı Türk Bayrağını Gönderir.\n :small_orange_diamond: |  **${ayarlar.prefix}havadurumu (Bölge) ** Belirttiğiniz Bölgenin Hava Durumunu Gösterir.\n :small_orange_diamond: | **${ayarlar.prefix}bilgi** Bot Hakkında Bilgi Alırsınız.\n :small_orange_diamond: | **${ayarlar.prefix}** .\n` + `:small_orange_diamond: | **${ayarlar.prefix}**  .\n` + `:small_orange_diamond: | **${ayarlar.prefix}**  .\n`)
-        .setThumbnail(client.user.avatarURL)
-        .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8) **|** [Destek Sunucusu](https://discord.gg/aEUfsU9) **|** [Web Sitesi](https://topbots-tr.glitch.me/)`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
-        .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
-    return message.channel.sendEmbed(embed);
-  
-  
+exports.run = (client, msg) => {
+  const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
+  msg.channel.sendCode("Kullanıcı Komutları:",`
+m!davet: Botun Davet Linkini Gösterir.  
+m!basvuru : başvuru isim soyisim yaş meslek kaç saat aktif .
+m!avatar: Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.
+m!steamstore: steamstore Olan her Sey gösterir = örnek: m!steamstore Csgo.
+m!sunucubilgi: Sunucunun bilgilerini gönderir.
+m!şikayet: Bot için şikayet bildirirsiniz.
+m!sunucutanıt: Sunuzunuzu Tanıtabilirsiniz.
+m!radyo: radyo açarsınız.
+m!ping: pinginizi gösterir.
+m!oylama: Bulunduğunuz kanala oylama yapar.
+m!istatistik: Botun istatistik gösterir.
+m!bilgi: Bot Bilgi Gösterir.
+m!playstore: playstore daki tüm oyunlar ve vb şeyleri gösterir.= örnek:playstore mobil pugb
+m!tavsiye: Bota eklenmesini istediğiniz şeyi tavsiye etmenizi sağlar.
+m!havadurumu: hava durumunu gösterir.
+
+`);
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [''],
-  permLevel: 0,
+  aliases: ['kullanıcı'],
+  permLevel: 0
 };
 
 exports.help = {
   name: 'kullanıcı',
-  description: '',
-  usage: ''
+  description: 'Tüm komutları listeler. İsterseniz bir komut hakkında yardım eder..',
+  usage: 'kullanıcı'
 };
