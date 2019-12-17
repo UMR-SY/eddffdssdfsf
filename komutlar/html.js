@@ -3,9 +3,9 @@ const Discord = require('discord.js');
 exports.run = function(client, message) {
  
   var role = message.guild.roles.find(role => role.name === "🟢 | HTML"); // JS Rolünün Tam Isminin Yazin
-  if (message.member.roles.has(654962064439246878)) return message.channel.send("⛔ Zaten bu role sahipsin ")
+  if (message.member.roles.has(656537155941826611)) return message.channel.send("⛔ Zaten bu role sahipsin ")
   message.member.addRole(role);
-  message.channel.send(`✅ JavaScript Rolü Başarıyla Verildi `);
+  message.channel.send(`✅ HTML Rolü Başarıyla Verildi `);
 };
 
 exports.conf = {
@@ -16,7 +16,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'js',
+  name: 'html',
   description: 'JavaScript kanallarına erişim sağlar.',
-  usage: 'js'
+  usage: ''
 };
