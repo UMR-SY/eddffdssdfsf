@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = function(client, message) {
  
-  var role = message.guild.roles.find(role => role.name === "🟢 | JS"); // JS Rolünün Tam Isminin Yazin
+  var role = message.guild.roles.find(role => role.name === "🟢 | HTML"); // JS Rolünün Tam Isminin Yazin
   if (message.member.roles.has(654962064439246878)) return message.channel.send("⛔ Zaten bu role sahipsin ")
   message.member.addRole(role);
   message.channel.send(`✅ JavaScript Rolü Başarıyla Verildi `);
