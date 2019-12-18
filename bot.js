@@ -1776,19 +1776,3 @@ client.on("guildMemberRemove", async member => {
     })
 })
 
-client.on("message", async msg => {
-  let sa = await db.fetch(`saas_${msg.guild.id}`);
-  if (sa == "acik") {
-    if (
-      msg.content.toLowerCase() == "ece" ||
-    ) {
-      try {
-        return msg.reply("Aleyküm Selam <a:kalp:620610646719070208>");
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  } else if (sa == "acik") {
-  }
-  if (!sa) return;
-});
