@@ -15,7 +15,7 @@ console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.gu
         "m!bilgi", 
         "m!eğlence", 
         "7/24 Aktif.",
-        '124 Sunucu |Maximus Boys'
+        '121 Sunucu |Maximus Boys'
   
     ];
 
