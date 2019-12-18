@@ -40,7 +40,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'steamstore',
+  name: 'steam',
   description: 'steamstore',
   usage: 'steamstore'
 };
