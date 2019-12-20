@@ -1776,3 +1776,29 @@ client.on("guildMemberRemove", async member => {
     })
 })
 
+console.log(
+    `${chalk.green(client.user.username)}${chalk.red(",")} ${chalk.blue(
+      client.guilds.size
+    )} ${chalk.yellow("Sunucu'ya")} ${chalk.red("ve")} ${chalk.blue(
+      client.users.size.toLocaleString()
+    )} ${chalk.yellow("Kullanıcı'ya")} ${chalk.red("hizmet veriyor!")}`
+  );
+  client.user.setStatus("online");
+  client.user.setActivity(``, { type: "PLAYING" });
+  let embed = new Discord.RichEmbed()
+    .setTitle("**HyperX Durum**")
+    .setDescription(
+      `**Bot aktif!** \n Botu açılış itibariyle şuan; **${
+        client.guilds.size
+      }** sunucu\n**${client.guilds
+        .reduce((a, b) => a + b.memberCount, 0)
+        .toLocaleString() + ``}** kullanıcı kullanıyor!`
+    )
+    .setTimestamp()
+    .setThumbnail(client.user.avatarURL)
+    .setColor("40bcdb")
+    .setFooter(`${client.user.username} `, client.user.avatarURL);
+  client.channels.get("656827969989247046").send(embed); //mesaj göndereceği kanal
+
+
+
