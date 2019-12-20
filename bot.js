@@ -1794,7 +1794,7 @@ client.on("ready", async () => {
   client.user.setStatus("online");
   client.user.setActivity(``, { type: "PLAYING" });
   let embed = new Discord.RichEmbed()
-    .setTitle("**HyperX Durum**")
+    .setTitle("**Maximus Boys*")
     .setDescription(
       `**Bot aktif!** \n Botu açılış itibariyle şuan; **${
         client.guilds.size
