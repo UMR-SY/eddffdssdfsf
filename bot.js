@@ -1762,20 +1762,35 @@ let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
   })
 
 });
-client.on("guildMemberRemove", async member => {
-
-    member.guild.fetchInvites().then(guildInvites => {
-
-      const ei = invites[member.guild.id];
+client.on('guildMemberRemove', member => {
+   
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    if (db.has(`dKanal_${member.guild.id}`) === false) return
+    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+    
+    const ei = invites[member.guild.id];
   
     invites[member.guild.id] = guildInvites;
  
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
 
-       db.subtract(`davet_${invite.inviter.id + member.guild.id}`,1)
+    const davetçi = client.users.get(invite.inviter.id);
+ 
+    
+   
+   const embed = new Discord.RichEmbed()
+   
+        .setColor("#01CFFE")
+        .setDescription(`<@` + `${davetçi.tag}` + `> tarafından davet edilen. ${member.user.tag} sunucudan ayrıldı!`)
+   member.guild.channels.get(channel).send(embed)
+    
+    member.guild.fetchInvites().then(guildInvites => {
+    invites[member.guild.id] = guildInvites;
+        db.subtract(`davet_${invite.inviter.id + member.guild.id}`,1)
     })
 })
-
+})
 client.on("ready", async () => {
   client.appInfo = await client.fetchApplication();
   setInterval(async () => {
