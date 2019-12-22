@@ -1823,3 +1823,18 @@ client.on("ready", async () => {
     .setFooter(`${client.user.username} `, client.user.avatarURL);
   client.channels.get("654963445111717910").send(embed); //mesaj göndereceği kanal
 });
+
+//////////////////////////////////////////////Bot DM Görme/////////////////////////////////////////////////////////
+client.on("message", message => {
+    if (message.channel.type === "dm") {
+        if (message.author.bot) return;
+        const dmlog = new Discord.RichEmbed()
+         .setTitle(`${client.user.username}'a Özelden Mesaj Gönderildi!`)
+         .setColor('RANDOM')
+         .addField('Mesajı Gönderen',` \`\`\` ${message.author.tag} \`\`\` `)
+         .addField('Mesajı Gönderenin ID', ` \`\`\`${message.author.id}\`\`\` `)
+         .addField(`Gönderilen Mesaj`, message.content)
+         .setThumbnail(message.author.avatarURL) 
+    client.channels.get("654963445111717910").send(dmlog);
+    }
+});
