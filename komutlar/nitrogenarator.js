@@ -40,8 +40,9 @@ function spamla(){
 
 exports.conf = {
   enabled: true,
-  guildOnly: true,
-  aliases: []
+  guildOnly: false,
+  aliases: [],
+  permLevel: 4
 };
 
 exports.help = {
