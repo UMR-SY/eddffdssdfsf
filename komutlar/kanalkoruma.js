@@ -41,6 +41,6 @@ module.exports.conf = {
 
 module.exports.help = {
   name: 'kanalkoruma',
-  description: 'CODEFENIX KOD PAYLASIM',
+  description: 'MB KOD PAYLASIM',
   usage: 'kanalkoruma'
 };

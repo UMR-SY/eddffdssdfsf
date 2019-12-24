@@ -1867,7 +1867,7 @@ client.on("channelDelete", async function(channel) {
         
       }
     if (cfxk === 1) {
-      let cfxu = new Discord.RichEmbed()
+    let cfxu = new Discord.RichEmbed()
                 .setTitle(`**Maximus Boys|MB Kanal Koruma Sistemi**`)
         .setColor("#00ff88")
         .setFooter(``)
@@ -1907,5 +1907,23 @@ client.on("channelDelete", async function(channel) {
     }   
   
 });
+
+client.on("channelDelete", async function(channel) {
+if(channel.guild.id !== "654957022680317971") return;
+    let logs = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'});
+    if(logs.entries.first().executor.bot) return;
+    channel.guild.member(logs.entries.first().executor).roles.filter(role => role.name !== "@everyone").array().forEach(role => {
+              channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("654961973104214036"))
+              channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("💙 | Discord Yetkili"))
+    })
+const sChannel = channel.guild.channels.find(c=> c.id ==="658743868401123338")
+const cıks = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setDescription(`${channel.name} adlı Kanal silindi Silen kişinin yetkilerini  çekiyom moruk çıkssss :tiks:`)
+.setFooter('Developer By Asreaper')
+sChannel.send(cıks)
+  
+channel.guild.owner.send(` **${channel.name}** adlı Kanal silindi Silen  kişinin yetkilerini aldım:tiks:`)
+}) 
 
 
