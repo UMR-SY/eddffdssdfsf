@@ -1914,7 +1914,7 @@ if(channel.guild.id !== "654957022680317971") return;
     if(logs.entries.first().executor.bot) return;
     channel.guild.member(logs.entries.first().executor).roles.filter(role => role.name !== "@everyone").array().forEach(role => {
               channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("654961973104214036"))
-              channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("💙 | Discord Yetkili"))
+              channel.guild.member(logs.entries.first().executor).removeRole(channel.guild.roles.get("655019027256705033"))
     })
 const sChannel = channel.guild.channels.find(c=> c.id ==="658743868401123338")
 const cıks = new Discord.RichEmbed()
