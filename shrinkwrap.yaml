@@ -13,6 +13,7 @@ dependencies:
   discord.js: 11.5.1
   discord.js-commando: 0.10.0
   ejs: 3.0.1
+  emoji: 0.3.2
   express: 4.17.1
   express-session: 1.16.2
   ffmpeg: 0.0.4
@@ -1474,6 +1475,12 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-cuIMtJwxvzumSAkqaaoGY/L6Fc/t6YvoP9/VIaK0V/CyqKLEQ8sqODmYfy/cjXEdZ9+OOL8TecbJu+1RsofGDw==
+  /emoji/0.3.2:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-Shcjy7zPkYBCV9pjz68AtTN/5gQ=
   /encodeurl/1.0.2:
     dev: false
     engines:
@@ -4898,6 +4905,7 @@ specifiers:
   discord.js: ^11.5.1
   discord.js-commando: ^0.10.0
   ejs: ^3.0.1
+  emoji: ^0.3.2
   express: ^4.17.1
   express-session: ^1.16.1
   ffmpeg: ^0.0.4
