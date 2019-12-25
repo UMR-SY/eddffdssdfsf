@@ -14,6 +14,7 @@ require("./util/eventLoader")(client);
 const path = require("path");
 const request = require("request");
 
+
 const app = express();
 app.get("/", (request, response) => {
   console.log(Date.now() + " Ping tamamdır.");
@@ -1925,5 +1926,7 @@ sChannel.send(cıks)
   
 channel.guild.owner.send(` **${channel.name}** adlı Kanal silindi Silen  kişinin yetkilerini aldım:tiks:`)
 }) 
+
+
 
 

@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
   
   if (args[0] == 'aç') {
     db.set(`reklam_${message.guild.id}`, 'acik') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:check:651540006397149224> Reklam Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Reklamı Engellenmicektir.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(' Reklam Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Reklamı Engellenmicektir.').setColor("RANDOM"));
  
   }
   if (args[0] == 'kapat') {
