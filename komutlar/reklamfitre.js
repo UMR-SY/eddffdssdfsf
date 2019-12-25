@@ -3,12 +3,12 @@ const Discord = require('discord.js')
 const ayarlar = require('../ayarlar.json');
 
 exports.run = async (client, message, args) => {
-  if (!args[0]) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`<a:XXX:588397643017879583> Lütfen **aç** veya **kapat** Yazmalısın! Örnek: ${ayarlar.prefix}küfür-filtresi aç`).setColor("RED"));
+  if (!args[0]) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(` Lütfen **aç** veya **kapat** Yazmalısın! Örnek: ${ayarlar.prefix}küfür-filtresi aç`).setColor("RED"));
   if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('`SUNUCUYU_YÖNET` Yetkisine Sahip Olmalısın!')
   
   if (args[0] == 'aç') {
     db.set(`reklam_${message.guild.id}`, 'acik') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onaylandI:586709716101496862> Reklam Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Reklamı Engellenmicektir.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:check:651540006397149224> Reklam Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Reklamı Engellenmicektir.').setColor("RANDOM"));
  
   }
   if (args[0] == 'kapat') {

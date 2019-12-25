@@ -25,4 +25,3 @@ module.exports.help = {
   description: 'Yazdığınız yazıyı banner olarak atar',
   usage: 'yazıb <yazdırmak istediğiniz yazı>'
 };
-//XiR
