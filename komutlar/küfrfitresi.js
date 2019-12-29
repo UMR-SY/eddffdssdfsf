@@ -3,17 +3,17 @@ const Discord = require('discord.js')
 const ayarlar = require('../ayarlar.json');
 
 exports.run = async (bot, message, args) => {
-  if (!args[0]) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`<a:XXX:588397643017879583> Lütfen **aç** veya **kapat** Yazmalısın! Örnek: ${ayarlar.prefix}küfür-filtresi aç`).setColor("RED"));
+  if (!args[0]) return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(`<a:onaylanmad:660744451760586762> Lütfen **aç** veya **kapat** Yazmalısın! Örnek: ${ayarlar.prefix}küfür-filtresi aç`).setColor("RED"));
   if (!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('`SUNUCUYU_YÖNET` Yetkisine Sahip Olmalısın!')
   
   if (args[0] == 'aç') {
     db.set(`kufur_${message.guild.id}`, 'acik') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onaylandI:586709716101496862> Küfür Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Küfürü Engellenmicektir.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onayland:660744428025282600> Küfür Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Küfürü Engellenmicektir.').setColor("RANDOM"));
     
   }
   if (args[0] == 'kapat') {
     db.set(`kufur_${message.guild.id}`, 'kapali') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onaylandI:586709716101496862> Küfür Filtresi Başarıyla Kapatıldı.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onayland:660744428025282600> Küfür Filtresi Başarıyla Kapatıldı.').setColor("RANDOM"));
     
   }
 

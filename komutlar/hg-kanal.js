@@ -10,13 +10,13 @@ db.delete(`sunucular.${message.guild.id}.giriscikis.kanal`)
 
 } else {
   let rol = message.mentions.channels.first()
-  if(!rol) return message.channel.send("Editlersiniz")
+  if(!rol) return message.channel.send("")
   var tür = args[1]
-  if(!tür) return message.channel.send("Editlersiniz") 
+  if(!tür) return message.channel.send("") 
   if(!türler.includes(tür)) return message.channel.send('Geçerli türler: Klasik/Manzara')
   db.set(`sunucular.${message.guild.id}.giriscikis.kanal`, rol.id)
   db.set(`sunucular.${message.guild.id}.giriscikis.tur`, tür)
-  message.channel.send(`Giriş çıkış kanalı **${rol.name}**, Giriş çıkış resmi **${tür}** olarak ayarlandı!`)
+  message.channel.send(`<a:parti:660744614122225695> Giriş çıkış kanalı **${rol.name}**, Giriş çıkış resmi **${tür}** olarak ayarlandı!`)
   
 }}
 exports.conf = {
