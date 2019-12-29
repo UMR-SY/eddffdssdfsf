@@ -186,7 +186,7 @@ client.on("message", async msg => {
       msg.content.toLowerCase() == "selamun aleyküm"
     ) {
       try {
-        return msg.reply("Aleyküm Selam <a:tik:658716319008423946>");
+        return msg.reply("Aleyküm Selam <a:tik:660744593263951894>");
       } catch (err) {
         console.log(err);
       }
