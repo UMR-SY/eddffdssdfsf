@@ -7,21 +7,16 @@ require("moment-duration-format");
 exports.run = (client, msg) => {
   const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   msg.channel.sendCode("Kullanıcı Komutları:",`
-m!davet: Botun Davet Linkini Gösterir.  
-m!basvuru : başvuru isim soyisim yaş meslek kaç saat aktif .
-m!avatar: Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.
-m!steamstore: steamstore Olan her Sey gösterir = örnek: m!steamstore Csgo.
-m!sunucubilgi: Sunucunun bilgilerini gönderir.
-m!şikayet: Bot için şikayet bildirirsiniz.
-m!sunucutanıt: Sunuzunuzu Tanıtabilirsiniz.
-m!radyo: radyo açarsınız.
-m!ping: pinginizi gösterir.
-m!oylama: Bulunduğunuz kanala oylama yapar.
-m!istatistik: Botun istatistik gösterir.
-m!bilgi: Bot Bilgi Gösterir.
-m!playstore: playstore daki tüm oyunlar ve vb şeyleri gösterir.= örnek:playstore mobil pugb
-m!tavsiye: Bota eklenmesini istediğiniz şeyi tavsiye etmenizi sağlar.
-m!havadurumu: hava durumunu gösterir.
+
+<a:tik:660744593263951894> | m!davet: Botun Davet Linkini Gösterir.  
+<a:tik:660744593263951894> | m!avatar: Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.
+<a:tik:660744593263951894> | m!steam: steamstore Olan her Sey gösterir = örnek: m!steam Csgo.
+<a:tik:660744593263951894> | m!sunucubilgi: Sunucunun bilgilerini gönderir.
+<a:tik:660744593263951894> | m!ping: bot pingini gösterir.
+<a:tik:660744593263951894> | m!istatistik: Botun istatistik gösterir.
+<a:tik:660744593263951894> | m!bilgi: Bot Bilgi Gösterir.
+<a:tik:660744593263951894> | m!havadurumu: hava durumunu gösterir.
+<a:tik:660744593263951894> | m!top10: Botun En İyi Sunucularını Gösterir (Yeni!)
 
 `);
 };
