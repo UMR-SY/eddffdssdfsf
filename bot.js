@@ -765,28 +765,28 @@ client.on("guildDelete", guild => {
   let rrrsembed = new Discord.RichEmbed()
 
     .setColor("RED")
-    .setTitle(":x:  | Botumuzu Kickledi :( ")
+    .setTitle("Botumuzu Kickledi ")
     .addField("Sunucu Adı:", guild.name)
     .addField("Sunucu sahibi", guild.owner)
     .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
     .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.get("651030381776207892").send(rrrsembed);
+  client.channels.get("658743868401123338").send(rrrsembed);
 });
 
 client.on("guildCreate", guild => {
   let rrrsembed = new Discord.RichEmbed()
 
     .setColor("RED")
-    .setTitle("✅  | Botumuzu Ekledi :) ")
+    .setTitle("Botumuzu Ekledi  ")
     .addField("Sunucu Adı:", guild.name)
     .addField("Sunucu sahibi", guild.owner)
     .addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
     .addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
     .addField("Sunucudaki Kişi Sayısı:", guild.memberCount);
 
-  client.channels.get("651030381776207892").send(rrrsembed);
+  client.channels.get("658743868401123338").send(rrrsembed);
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
