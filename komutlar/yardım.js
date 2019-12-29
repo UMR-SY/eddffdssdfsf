@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
         .setThumbnail(client.user.avatarURL)
         .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8) **|** [Destek Sunucusu](https://discord.gg/aEUfsU9) **|** [Web Sitesi](https://topbots-tr.glitch.me/)`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
-        .setImage("https://cdn.discordapp.com/attachments/607989228294635543/660757118395351040/max_baner.jpg")  
+        .setImage("https://cdn.discordapp.com/attachments/607989228294635543/660761252825399297/asreaper_banenr.jpg")  
     return message.channel.sendEmbed(embed);
   
   
