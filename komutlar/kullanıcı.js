@@ -5,18 +5,18 @@ var green = process.env.NODE_DISABLE_COLORS ? '' : '\x1b[32m';
 require("moment-duration-format");
 
 exports.run = (client, msg) => {
+    const embed = new Discord.RichEmbed()
   const duration = moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]");
   msg.channel.sendCode("Kullanıcı Komutları:",`
-
-<a:tik:660744593263951894> | m!davet: Botun Davet Linkini Gösterir.  
-<a:tik:660744593263951894> | m!avatar: Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.
-<a:tik:660744593263951894> | m!steam: steamstore Olan her Sey gösterir = örnek: m!steam Csgo.
-<a:tik:660744593263951894> | m!sunucubilgi: Sunucunun bilgilerini gönderir.
-<a:tik:660744593263951894> | m!ping: bot pingini gösterir.
-<a:tik:660744593263951894> | m!istatistik: Botun istatistik gösterir.
-<a:tik:660744593263951894> | m!bilgi: Bot Bilgi Gösterir.
-<a:tik:660744593263951894> | m!havadurumu: hava durumunu gösterir.
-<a:tik:660744593263951894> | m!top10: Botun En İyi Sunucularını Gösterir (Yeni!)
+m!davet: Botun Davet Linkini Gösterir.  
+m!avatar: Belirtilen Kişinin veya Komutu Yazan Kişinin Avatarını Atar.
+m!steam: steamstore Olan her Sey gösterir = örnek: m!steamstore Csgo.
+m!sunucubilgi: Sunucunun bilgilerini gönderir.
+m!ping: bot pingini gösterir.
+m!istatistik: Botun istatistik gösterir.
+m!bilgi: Bot Bilgi Gösterir.
+m!havadurumu: hava durumunu gösterir.
+m!top10: Botun En İyi Sunucularını Gösterir (Yeni!)
 
 `);
 };
