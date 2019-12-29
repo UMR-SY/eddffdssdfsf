@@ -1930,3 +1930,20 @@ channel.guild.owner.send(` **${channel.name}** adlı Kanal silindi Silen  kişin
 
 
 
+////////////////sumucu ismi sayaç////////////////////////////
+client.on('guildMemberAdd', async member => {
+let A = await db.fetch(`MB | Code #2020 ${member.guild.id}`);
+if (A === "kapali") return;
+if (A === "acik") {
+member.guild.setName(`MB | Code #2020 ${member.guild.memberCount}`)
+}; 
+});
+
+
+client.on('guildMemberRemove', async member => {
+let A = await db.fetch(`MB | Code #2020 ${member.guild.id}`);
+if (A === "kapali") return;
+if (A == "acik") {
+member.guild.setName(`MB | Code #2020 ${member.guild.memberCount}`)
+};
+});
