@@ -31,20 +31,8 @@ const log = message => {
   console.log(`${message}`);
 };
 
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
-fs.readdir("./komutlar/", (err, files) => {
-  if (err) console.error(err);
-  log(`${files.length} komut yüklenecek.`);
-  files.forEach(f => {
-    let props = require(`./komutlar/${f}`);
-    log(`Yüklenen komut: ${props.help.name}.`);
-    client.commands.set(props.help.name, props);
-    props.conf.aliases.forEach(alias => {
-      client.aliases.set(alias, props.help.name);
-    });
-  });
-});
+
+
 
 client.reload = command => {
   return new Promise((resolve, reject) => {
@@ -1972,3 +1960,20 @@ client.on('guildMemberRemove',async member => {
       kanal.setName(`Sunucudaki üye sayısı : ${guild.memberCount}`)
     }
 })
+
+
+/////////////////////////////Küfür Engel///////////////////////////////
+client.on("message", msg => {
+  if (!msg.guild) return;
+  if (!kufurEngel[msg.guild.id]) return;
+  if (kufurEngel[msg.guild.id].küfürEngel === 'kapali') return;
+    if (kufurEngel[msg.guild.id].küfürEngel=== 'acik') {
+      const kufur = ["mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git"];
+  if (kufur.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.reply("Küfür etmemelisin **!!Emoji Koyulacak!!**!").then(message => message.delete(3000));
+    }
+}
+    }
+});
