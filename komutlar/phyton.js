@@ -5,7 +5,7 @@ exports.run = function(client, message) {
   var role = message.guild.roles.find(role => role.name === "🟢 | Phyton"); // JS Rolünün Tam Isminin Yazin
   if (message.member.roles.has(656537029634555914)) return message.channel.send("⛔ Zaten bu role sahipsin ")
   message.member.addRole(role);
-  message.channel.send(`<a:tik:658716319008423946> Phyton Rolü Başarıyla Verildi `);
+  message.channel.send(` Phyton Rolü Başarıyla Verildi `);
 };
 
 exports.conf = {
