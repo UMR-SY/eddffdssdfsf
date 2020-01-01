@@ -1688,22 +1688,6 @@ client.on("guildMemberAdd", async member => {
 });
 //////////////////////////
 
-client.on(`guildMemberAdd`, async member => {
-  const e = new Discord.RichEmbed()
-    .setColor(`RANDOM`)
-    .setImage(`https://media.giphy.com/media/lnIv50U7cut3yUbpPJ/giphy.gif`)
-    .addField(
-      `Sunucumuza geldiğin için teşekkür ederim!`,
-      `MaximusBoys Bot iyi eğlenceler diler`
-    )
-    .addField(
-      `Davet Linkleri;`,
-      `[Botu Sunucuna Eklemek İçin](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8)\n[Botun Destek Sunucusu](https://discord.gg/NHEhm93)`
-    )
-    .setFooter(`Bu Sunucu 7/24 MaximusBoys tarafından korunuyor.`);
-  member.send(e);
-});
-////////////////////////////////////////////////////////////////////////////
 
 client.on("guildMemberAdd", async member => {
   let channel = client.channels.get("654324391282475009");
