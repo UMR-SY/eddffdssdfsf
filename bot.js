@@ -1981,7 +1981,7 @@ function umut() {
         setTimeout(() => {
             client.channels.get(`661843216257253377`).setName(`MB | Code #2020`);
             umut2();
-        }, 3000);
+        }, 4000);
       });
 }
 
@@ -1990,7 +1990,7 @@ function umut() {
         setTimeout(() => {
             client.channels.get(`661843216257253377`).setName(`Nice Mutlu Yıllara!`);
             umut3();
-        }, 3000);
+        }, 4000);
       });
   }
   function umut3() {
@@ -1998,7 +1998,7 @@ function umut() {
         setTimeout(() => {
             client.channels.get(`661843216257253377`).setName(`#2020`);
             umut();
-        }, 2000);
+        }, 4000);
       });
   }
  
