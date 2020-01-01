@@ -29,7 +29,7 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['davet-kanal-belirle','davetkanal','davettakip','davet-takip','davettakipayarla','davet-takip-ayarla'],
-    permLevel: 0,
+    permLevel: 3,
 }
 exports.help = {
     name: 'davet-takip',

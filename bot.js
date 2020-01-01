@@ -1972,3 +1972,36 @@ client.on('guildMemberRemove',async member => {
       kanal.setName(`Sunucudaki üye sayısı : ${guild.memberCount}`)
     }
 })
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+function umut() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            client.channels.get(`661843216257253377`).setName(`MB | Code #2020`);
+            umut2();
+        }, 3000);
+      });
+}
+
+  function umut2() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            client.channels.get(`661843216257253377`).setName(`Nice Mutlu Yıllara!`);
+            umut3();
+        }, 3000);
+      });
+  }
+  function umut3() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            client.channels.get(`661843216257253377`).setName(`#2020`);
+            umut();
+        }, 2000);
+      });
+  }
+ 
+ client.on('ready', async message => {
+   umut();
+ })
