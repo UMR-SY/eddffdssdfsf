@@ -79,7 +79,7 @@
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "keywords": [
     "node",
     "glitch",
