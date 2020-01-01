@@ -1991,3 +1991,57 @@ function umut() {
  })
 
 
+////////////////////////////////////////////////////////////////////
+client.on('message', async message => {
+  const ms = require('ms');
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  let u = message.mentions.users.first() || message.author;
+  if (command === "serverpaneltemizle") {
+ if (!message.guild.channels.find(channel => channel.name === "Server Panel")) return message.channel.send("**Server Panel Ayarlanmamış!**")
+   if (!message.member.hasPermission('ADMINISTRATOR'))
+  return message.channel.send(" Yetkin bulunmuyor.");
+    const a = message.guild.channels.find(channel => channel.name === "Server Panel").delete()
+      if(!a) return console.log("guildStats")
+      const b = message.guild.channels.find(channel => channel.name === `Toplam Üye • ${message.guild.members.filter( member => member.user.bot).size} bot / ${message.guild.memberCount} üye`, true)
+      if(!b) return console.log("guildStatsMember")
+      const c = message.guild.channels.find(channel => channel.name === `Rekor Online •${client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`).delete()
+      if(!c) return console.log("guildStatsBot")
+     const m = message.guild.channels.find(channel => channel.name === `Bot Sayısı • ${client.guilds.reduce((a, b) => a + b.onlinememberCount, 0).toLocaleString()}`).delete()
+      if(!m) return console.log("guildStatsOnlineBot")
+      const d = message.guild.channels.find(channel => channel.name === `Toplam Kanal: ${client.channels.size.toLocaleString()}`).delete() //|| message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-1}`).delete() || message.guild.channels.find(channel => channel.name === `Kanal sayısı: ${message.guild.channels.size-2}`).delete()
+      if(!d) return console.log("guildStatsChannel")
+      message.channel.send("**Kanallar Temizlendi!**")
+    }
+  if (command === "serverpanel") {
+  if (message.guild.channels.find(channel => channel.name === "Server Panel")) return message.channel.send(" Bot Paneli Zaten Ayarlanmış.")
+  message.channel.send(`**Server Panel Odalarının Kurulumunun Başlamasını İstiyorsanız 'başlat Yazınız!'**`)
+      if (!message.member.hasPermission('ADMINISTRATOR'))
+  return message.channel.send(" Yetkin bulunmuyor.");
+      message.channel.awaitMessages(response => response.content === 'başlat', {
+        max: 1,
+        time: 10000,
+        errors: ['time'],
+      })
+    .then((collected) => {
+   message.guild.createChannel('Server Panel', 'category', [{
+  id: message.guild.id,
+  deny: ['SPEAK'],
+  deny: ['CONNECT']  
+}]);
+        
+ message.guild.createChannel(`Toplam Üye • ${message.guild.memberCount}`, 'voice')
+.then(channel =>
+       channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
+message.guild.createChannel(`Botlar •  ${message.guild.members.filter(m => m.user.bot).size}`, 'voice')
+.then(channel =>
+             channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
+message.guild.createChannel(`Rekor Online • Bakımda!`, 'voice')
+.then(channel =>
+ channel.setParent(message.guild.channels.find(channel => channel.name === "Server Panel")));
+  message.channel.send("Bot Bilgi Paneli Ayarlandı!")
+ 
+        })    
+    
+}
+});
