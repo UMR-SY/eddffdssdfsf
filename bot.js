@@ -1959,39 +1959,7 @@ client.on('guildMemberRemove',async member => {
 
 
 
-///////////////////////////////////////////////////////////////////////////////
-function umut() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`661843216257253377`).setName(`MB | Code #2020`);
-            umut2();
-        }, 4000);
-      });
-}
-
-  function umut2() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`661843216257253377`).setName(`Nice Mutlu Yıllara!`);
-            umut3();
-        }, 4000);
-      });
-  }
-  function umut3() {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            client.channels.get(`661843216257253377`).setName(`#2020`);
-            umut();
-        }, 4000);
-      });
-  }
- 
- client.on('ready', async message => {
-   umut();
- })
-
-
-////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 client.on('message', async message => {
   const ms = require('ms');
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
