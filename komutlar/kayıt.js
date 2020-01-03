@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
   if (!yas) return message.channel.send(`Yaşını girmelisin.`)
   
   user.setNickname(`${isim} | ${yas}`)
-  user.addRole(rol)
+  user.addRole(662328771356917761)
   message.channel.send(`${message.author} Sunucuya Kaydoldun !`)
 };
 
