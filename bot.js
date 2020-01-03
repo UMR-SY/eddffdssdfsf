@@ -248,7 +248,7 @@ client.on("guildMemberAdd", async member => {
    ` \`${
        member.user.tag
     }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı.> `
+      member.guild.members.size}\` Kullanıcı Kaldı. ✅ `
   );
 });
 
@@ -262,7 +262,7 @@ client.on("guildMemberRemove", async member => {
     ` \`${
       member.user.tag
     }\`Adlı Kullanıcı Sunucudan Ayrıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı. <a:onaylanmad:660744451760586762>`
+      member.guild.members.size}\` Kullanıcı Kaldı❌`
   );
 });
 
@@ -1241,7 +1241,7 @@ client.on("guildMemberAdd", async member => {
       ? otorolmesaj
           .replace("{kullanıcı}", `${member.user}`)
           .replace("{rol}", `${rol2.name}`)
-      : ` \`${member.user.tag}\` Adlı Kullanıcıya \`${rol2.name}\` Adlı Rol Verildi .`
+      : ` \`${member.user.tag}\` Adlı Kullanıcıya \`${rol2.name}\` Adlı Rol Verildi. ✅ `
   );
 });
 
