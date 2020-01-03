@@ -248,7 +248,7 @@ client.on("guildMemberAdd", async member => {
    ` \`${
        member.user.tag
     }\` Adlı Kullanıcı Sunucuya Katıldı. \`${sayac}\` Kullanıcı Olmaya \`${sayac -
-      member.guild.members.size}\` Kullanıcı Kaldı.<a:onayland:660744428025282600> `
+      member.guild.members.size}\` Kullanıcı Kaldı.> `
   );
 });
 
@@ -523,7 +523,7 @@ client.on("guildMemberAdd", async member => {
       .get(member.guild.id)
       .channels.get(giriscikiskanalID);
     giriscikiskanali.send(
-      `:loudspeaker:<a:onaylandI:586709716101496862> Hoşgeldin **${member.user.tag}** Rolün Başarıyla Verildi.`
+      `:loudspeaker: Hoşgeldin **${member.user.tag}** Rolün Başarıyla Verildi.`
     );
   } catch (e) {
     // eğer hata olursa bu hatayı öğrenmek için hatayı konsola gönderelim.
@@ -1241,7 +1241,7 @@ client.on("guildMemberAdd", async member => {
       ? otorolmesaj
           .replace("{kullanıcı}", `${member.user}`)
           .replace("{rol}", `${rol2.name}`)
-      : `<a:ok:620544866807578635> \`${member.user.tag}\` adlı kullanıcıya \`${rol2.name}\` rolü verildi.`
+      : ` \`${member.user.tag}\` Adlı Kullanıcıya \`${rol2.name}\` Adlı Rol Verildi .`
   );
 });
 
