@@ -1,52 +1,86 @@
-const Discord = require('discord.js')
-const db = require('quick.db')
-const client = new Discord.Client()
-
-exports.run = async (client, message, args) => {    
-  if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(`Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısın.`);
-
+const Discord = require('discord.js');
+const ayarlar = require('../ayarlar.json');
+const db = require('quick.db');
+//Data_TR
+exports.run = async(client, message, args) => {
+  let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
+  if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Bu komutu kullanabilmek için `Yönetici` iznine sahip olmalısın!')
+  let panel = await db.fetch(`sunucupanel_${message.guild.id}`)
   
-
- const kanal1 = args.slice(0).join(' ')
-      
-  const kanal2 = message.guild.channels.find('name', `${kanal1}`)
-
-  if(args[0] == 'kapat') {
-    
-   const kanalcik =  db.fetch(`botPanel_${message.guild.id}`) 
-   const kanalcik2 = message.guild.channels.find('id' , kanalcik)
-   kanalcik2.delete()
-    db.delete(`botPanel_${message.guild.id}`)  
-    const embed2 = new Discord.RichEmbed()
-    .setAuthor('Panel kanalı başarıyla sıfırlandı')
-    .setColor('RED')
-  message.channel.send(embed2) 
-    
-  } 
-  if(args[0] == 'kapat') return
+  let rekoronline = await db.fetch(`panelrekor_${message.guild.id}`)
+  if(args[0] === "sil" || args[0] === "kapat") {
+    db.delete(`sunucupanel_${message.guild.id}`)
+    db.delete(`panelrekor_${message.guild.id}`)
+  try{
+    message.guild.channels.find(x =>(x .name).includes("• Sunucu Panel")).delete()
+    message.guild.channels.find(x =>(x .name).includes("Toplam Üye •")).delete()
+    message.guild.channels.find(x =>(x .name).includes("Aktif Üye •")).delete()
+    message.guild.channels.find(x =>(x .name).includes("Botlar •")).delete()
+    message.guild.channels.find(x =>(x .name).includes("Rekor Aktiflik •")).delete()
+  } catch(e) { }
+    message.channel.send(`Ayarlanan sunucu paneli başarıyla devre dışı bırakıldı!`)
+   return 
+  }
+if(panel) return message.channel.send(`Bu sunucuda panel zaten ayarlanmış! Devredışı bırakmak için;  \`${prefix}sunucupanel sil\``)
   
-    if (!kanal2 || kanal2.type !== "voice") return message.reply('Sesli kanal ismi yazmalısınız.')
+      message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Sunucu Panel').setDescription('Gerekli dosaylar kurulsun mu?.').setFooter('Onaylıyorsan 15 saniye içerisinde "evet" yazmalısın.'))
+.then(() => {
+message.channel.awaitMessages(response => response.content === 'evet', {
+max: 1,
+time: 15000,
+errors: ['time'],
+}) 
+.then((collected) => { 
+  
+  db.set(`sunucupanel_${message.guild.id}`, message.guild.id)
+  try{
+  let role = message.guild.roles.find("name", "@everyone");
+  message.guild.createChannel(`${client.user.username} • Sunucu Panel`, 'category', [{id: message.guild.id, deny: ['CONNECT']}]);
+        message.guild.createChannel(`Toplam Üye • ${message.guild.members.size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+      c.overwritePermissions(role, {
+          CONNECT: false,
+      });
+  })
+ message.guild.createChannel(`Aktif Üye • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+      c.overwritePermissions(role, {
+          CONNECT: false,
+      });
+  })
+  
+        message.guild.createChannel(`Botlar • ${message.guild.members.filter(m => m.user.bot).size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+      c.overwritePermissions(role, {
+          CONNECT: false,
+      });
+  })
+  
+        message.guild.createChannel(`Rekor Aktiflik • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+      c.overwritePermissions(role, {
+          CONNECT: false,
+      });
+  })
+  db.set(`panelrekor_${message.guild.id}`, message.guild.members.filter(off => off.presence.status !== 'offline').size)
+  
+  message.channel.send(`Sunucu panel için gerekli kanallar oluşturulup, ayarlamalar yapıldı!  \`(Oda isimlerini değiştirmeyin, çalışmaz!)\``)
     
-    db.set(`botPanel_${message.guild.id}` , kanal2.id)
-     
-     const embed = new Discord.RichEmbed()
-     .setAuthor('Başarılı')
-     .addField('Ayarlanan kanal' , '```css\n'+kanal2.name+'```')
-     .setColor('GREEN')
-     .setDescription(`Sunucuya bir kullanıcı girdiğinde & çıktığında kanal ismini değiştirerek üye sayısını gösterecek.Çalıştığını görmek için yeni birinin katılmasını ya da çıkmasını bekleyin!`)
-      message.channel.send(embed)
-}
-        
+}catch(e){
+      console.log(e.stack);
+    }
+  
+    });
+});
+
+};
+
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
-  permLevel: 2,
-  kategori:"bot"
+  aliases: ["sunucu-panel"],
+  permLevel: 3
 };
 
 exports.help = {
-  name: 'sunucu-panel-ayarla',
-  description: 'Sunucu panelini ayarlar.',
-  usage: 'sunucu-panel-ayarla [sesli kanal ismi] / kapat'
+  name: 'sunucupanel',
+  description: 'Sunucu İstatistiklerini Gösteren Panel Kurar Ve Sürekli Olarak Günceller.',
+  usage: 'sunucupanel',
+  kategori: 'yetkili'
 };

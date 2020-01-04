@@ -2013,3 +2013,46 @@ message.guild.createChannel(`Rekor Online • Bakımda!`, 'voice')
     
 }
 });
+/////////////////////////
+client.on("guildMemberAdd", async(member) => {
+  let sunucupaneli = await db.fetch(`sunucupanel_${member.guild.id}`)
+  if(sunucupaneli) {
+    let rekoronline = await db.fetch(`panelrekor_${member.guild.id}`)
+    let toplamuye = member.guild.channels.find(x =>(x.name).startsWith("Toplam Üye •"))
+    let toplamaktif = member.guild.channels.find(x =>(x.name).startsWith("Aktif Üye •"))
+    let botlar = member.guild.channels.find(x =>(x.name).startsWith("Botlar •"))
+    let rekoraktif = member.guild.channels.find(x =>(x.name).startsWith("Rekor Aktiflik •"))
+    
+    if(member.guild.members.filter(off => off.presence.status !== 'offline').size > rekoronline) {
+      db.set(`panelrekor_${member.guild.id}`, member.guild.members.filter(off => off.presence.status !== 'offline').size)
+    }
+    try{
+      toplamuye.setName(`Toplam Üye • ${member.guild.members.size}`)
+      toplamaktif.setName(`Aktif Üye • ${member.guild.members.filter(off => off.presence.status !== 'offline').size}`)
+      botlar.setName(`Botlar • ${member.guild.members.filter(m => m.user.bot).size}`)
+      rekoraktif.setName(`Rekor Aktiflik • ${rekoronline}`)
+   } catch(e) { }
+  }
+})
+client.on("guildMemberRemove", async(member) => {
+  let sunucupaneli = await db.fetch(`sunucupanel_${member.guild.id}`)
+  if(sunucupaneli) {
+    let rekoronline = await db.fetch(`panelrekor_${member.guild.id}`)
+    let toplamuye = member.guild.channels.find(x =>(x.name).startsWith("Toplam Üye •"))
+    let toplamaktif = member.guild.channels.find(x =>(x.name).startsWith("Aktif Üye •"))
+    let botlar = member.guild.channels.find(x =>(x.name).startsWith("Botlar •"))
+    let rekoraktif = member.guild.channels.
+    find(x =>(x.name).startsWith("Rekor Aktiflik •"))
+    
+    if(member.guild.members.filter(off => off.presence.status !== 'offline').size > rekoronline) {
+      db.set(`panelrekor_${member.guild.id}`, member.guild.members.filter(off => off.presence.status !== 'offline').size)
+    }
+    try{
+      toplamuye.setName(`Toplam Üye • ${member.guild.members.size}`)
+      toplamaktif.setName(`Aktif Üye • ${member.guild.members.filter(off => off.presence.status !== 'offline').size}`)
+      botlar.setName(`Botlar • ${member.guild.members.filter(m => m.user.bot).size}`)
+      rekoraktif.setName(`Rekor Aktiflik • ${rekoronline}`)
+   } catch(e) { }
+  }
+})
+
