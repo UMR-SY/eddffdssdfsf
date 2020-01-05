@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
     let args = message.content.split(' ').slice(1);
     const secenekler = args.slice(0).join(' ');
 
-    if(secenekler.length < 1) return message.reply("Link Engelleme Açmak İçin `g!link-engelle aç` kapatmak için `g!link-engelle kapat`").then(m => m.delete(10000));
+    if(secenekler.length < 1) return message.reply("Link Engelleme Açmak İçin `m!link-engelle aç` kapatmak için `m!link-engelle kapat`").then(m => m.delete(10000));
 
   if (secenekler !== "aç" && secenekler !== "kapat" && secenekler !== "on" && secenekler !== "off") return message.reply("aç veya kapat yaz!")
 
