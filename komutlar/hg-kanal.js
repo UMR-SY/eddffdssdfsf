@@ -6,11 +6,11 @@ let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog.json", "utf8"));
 var prefix = ayarlar.prefix; "m!"
 
 exports.run = async (client, message, args) => {
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`<a:hayr:620546385371987978> Bu Komutu Kullanabilmek İçin **Yönetici** İznine Sahip Olmalısın!`);
+if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`<a:onaylanmad:660744451760586762> Bu Komutu Kullanabilmek İçin **Yönetici** İznine Sahip Olmalısın!`);
   
   let channel = message.mentions.channels.first()
     if (!channel) {
-        message.channel.send(`<a:hayr:620546385371987978> **Yalnış Kullanım**\n**Doğru Kullanım:  **m!hg-kanal #kanal`)
+        message.channel.send(`<a:onaylanmad:660744451760586762> **Yalnış Kullanım**\n**Doğru Kullanım:  **m!hg-kanal #kanal`)
         return
     }
     if(!gkanal[message.guild.id]){
@@ -22,7 +22,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`<a:hay
         console.log(err)
     })
 
-    message.channel.send(`<a:evet:620544866807578635> ${channel} Giriş Mesaj Kanal ayarlandı.`)
+    message.channel.send(`<a:onayland:660744428025282600> ${channel} Giriş Mesaj Kanal ayarlandı.`)
 
 }
     
