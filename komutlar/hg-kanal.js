@@ -29,7 +29,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['hg-kanal'],
+    aliases: [''],
     kategori: "yetkili",
     permLevel: 2
 }

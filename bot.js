@@ -2074,9 +2074,9 @@ client.on("guildMemberAdd", async member => {
             if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
             else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
             else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 300, 300, member.user.tag);
-            await userimg.resize(187, 169);////boyut
-            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
+            await bg.print(font, 50, 145, member.user.tag);
+            await userimg.resize(108, 108);////boyut
+            await bg.composite(userimg, 140, 41).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
               setTimeout(function () {
                     gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
               }, 1000);
@@ -2101,7 +2101,7 @@ client.on("guildMemberRemove", async member => {
             else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
             else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
             await bg.print(font, 50, 145, member.user.tag);
-            await userimg.resize(110, 110);////boyut
+            await userimg.resize(108, 108);////boyut
             await bg.composite(userimg, 140, 41).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
               setTimeout(function () {
                     gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
