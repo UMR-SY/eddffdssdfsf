@@ -2100,9 +2100,9 @@ client.on("guildMemberRemove", async member => {
              if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
             else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
             else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 50, 0, member.user.tag);
+            await bg.print(font, 50, 140, member.user.tag);
             await userimg.resize(100, 100);////boyut
-            await bg.composite(userimg, 315, 7).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
+            await bg.composite(userimg, 140, 44).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
               setTimeout(function () {
                     gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
               }, 1000);
