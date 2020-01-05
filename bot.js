@@ -2068,7 +2068,7 @@ client.on("guildMemberAdd", async member => {
      let username = member.user.username;
         if (gözelkanal === undefined || gözelkanal === null) return;
         if (gözelkanal.type === "text") {
-            const bg = await Jimp.read("");
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/662331859778273310/663447983542632483/depositphotos_47372005-stock-illustration-orange-blue-background-with-triagles.jpg");
             const userimg = await Jimp.read(member.user.avatarURL);
             var font;
             if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
