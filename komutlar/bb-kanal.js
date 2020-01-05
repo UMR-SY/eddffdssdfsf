@@ -10,7 +10,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
   
   let channel = message.mentions.channels.first()
     if (!channel) {
-        message.channel.send(`:x: **Yalnış Kullanım**\n**Doğru Kullanım:** m!bb-kanal #kanal`)
+        message.channel.send(` **Yalnış Kullanım**\n**Doğru Kullanım:** m!bb-kanal #kanal`)
         return
     }
     if(!gkanal[message.guild.id]){
@@ -21,20 +21,21 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu Kom
     fs.writeFile("./ayarlar/glog1.json", JSON.stringify(gkanal), (err) => {
         console.log(err)
     })
-     message.channel.send(`╔══════════════════════╗`)
-    message.channel.send(`║${channel} Çıkış Mesaj Kanal ayarlandı.`)
-    message.channel.send(`╚══════════════════════╝`)
+  
+    message.channel.send(`<a:onayland:660744428025282600> ${channel} Çıkış Mesaj Kanal ayarlandı.`)
+  
 }
     
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['bb-kanal'],
+    aliases: ['hg-kanal'],
+    kategori: "yetkili",
     permLevel: 2
 }
 
 exports.help = {
     name: 'bb-kanal',
     description: 'Çıkış Kanalını Ayarlar.',
-    usage: 'bb-kanal <#kanal>'
+    usage: 's+bb-kanal <#kanal>'
 }
