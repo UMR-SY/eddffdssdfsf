@@ -1928,7 +1928,7 @@ client.on("guildMemberAdd", async member => {
             else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
             await bg.print(font, 300, 300, member.user.tag);
             await userimg.resize(187, 169);////boyut
-            await bg.composite(userimg, 217, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
+            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
               setTimeout(function () {
                     gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
               }, 1000);
