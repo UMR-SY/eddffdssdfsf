@@ -1984,3 +1984,11 @@ client.on("guildMemberRemove", async member => {
     })
 
 //////////////////////////////////////////
+var PI = Math.PI;
+exports.alan = function (r) {
+  return PI * r * r;
+};
+
+exports.cevre = function (r) {
+  return 2 * PI * r;
+};
