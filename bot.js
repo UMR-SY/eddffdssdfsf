@@ -2068,7 +2068,7 @@ client.on("guildMemberAdd", async member => {
      let username = member.user.username;
         if (gözelkanal === undefined || gözelkanal === null) return;
         if (gözelkanal.type === "text") {
-            const bg = await Jimp.read("");
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/662339098895319070/663314614225993729/giris.jpg");
             const userimg = await Jimp.read(member.user.avatarURL);
             var font;
             if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
@@ -2094,15 +2094,15 @@ client.on("guildMemberRemove", async member => {
         let username = member.user.username;
         if (gözelkanal === undefined || gözelkanal === null) return;
         if (gözelkanal.type === "text") {            
-                        const bg = await Jimp.read("");
+                        const bg = await Jimp.read("https://cdn.discordapp.com/attachments/662339098895319070/663315270475055116/cikis.jpg");
             const userimg = await Jimp.read(member.user.avatarURL);
             var font;
              if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
             else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
             else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 300, 300, member.user.tag);
-            await userimg.resize(189, 173);////boyut
-            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
+            await bg.print(font, 50, 145, member.user.tag);
+            await userimg.resize(110, 110);////boyut
+            await bg.composite(userimg, 140, 41).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
               setTimeout(function () {
                     gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
               }, 1000);
