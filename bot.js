@@ -2055,4 +2055,3 @@ client.on("guildMemberRemove", async(member) => {
    } catch(e) { }
   }
 })
-
