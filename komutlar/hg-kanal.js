@@ -1,41 +1,34 @@
 const Discord = require('discord.js')
-const fs = require('fs');
-const ayarlar = require('../ayarlar.json');
-let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog.json", "utf8"));
+const db = require('quick.db')
 
-var prefix = ayarlar.prefix; "m!"
+var türler = ["klasik", "manzara"]
 
-exports.run = async (client, message, args) => {
-if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`<a:hayr:620546385371987978> Bu Komutu Kullanabilmek İçin **Yönetici** İznine Sahip Olmalısın!`);
+exports.run = async (client, message, args,dil) => {
+if(args[0] === "kapat") {
+db.delete(`sunucular.${message.guild.id}.giriscikis.kanal`)
+  message.channel.send(`Giriş Çıkış başarıyla kapatıldı!`)
+
+} else {
+  let rol = message.mentions.channels.first()
+  if(!rol) return message.channel.send("")
+  var tür = args[1]
+  if(!tür) return message.channel.send("") 
+  if(!türler.includes(tür)) return message.channel.send('Geçerli türler: Klasik/Manzara')
+  db.set(`sunucular.${message.guild.id}.giriscikis.kanal`, rol.id)
+  db.set(`sunucular.${message.guild.id}.giriscikis.tur`, tür)
+  message.channel.send(`<a:parti:660744614122225695> Giriş çıkış kanalı **${rol.name}**, Giriş çıkış resmi **${tür}** olarak ayarlandı!`)
   
-  let channel = message.mentions.channels.first()
-    if (!channel) {
-        message.channel.send(`<a:hayr:620546385371987978> **Yalnış Kullanım**\n**Doğru Kullanım:  **m!hg-kanal #kanal`)
-        return
-    }
-    if(!gkanal[message.guild.id]){
-        gkanal[message.guild.id] = {
-            resim: channel.id
-        };
-    }
-    fs.writeFile("./ayarlar/glog.json", JSON.stringify(gkanal), (err) => {
-        console.log(err)
-    })
-
-    message.channel.send(`<a:evet:620544866807578635> ${channel} Giriş Mesaj Kanal ayarlandı.`)
-
-}
-    
+}}
 exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: ['hg-kanal'],
-    kategori: "yetkili",
-    permLevel: 2
-}
+  enabled: true,
+  guildOnly: false,
+  aliases: ["gç"],
+  permLevel: 4,
+  kategori: "Moderasyon"
+};
 
 exports.help = {
-    name: 'hg-kanal',
-    description: 'Giriş Çıkış Kanalını Ayarlar.',
-    usage: 'hg-kanal <#kanal>'
-}
+  name: 'girişçıkış',  
+  description: 'Sunucuya gelen giden kullanıcıların resimli olarak belirtlileceği kanalı belirler',
+  usage: 'girişçıkış <#kanal> <klasik/manzara> || girişçıkış kapat'
+};

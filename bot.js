@@ -31,7 +31,20 @@ const log = message => {
   console.log(`${message}`);
 };
 
-
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
+fs.readdir("./komutlar/", (err, files) => {
+  if (err) console.error(err);
+  log(`${files.length} komut yüklenecek.`);
+  files.forEach(f => {
+    let props = require(`./komutlar/${f}`);
+    log(`Yüklenen komut: ${props.help.name}.`);
+    client.commands.set(props.help.name, props);
+    props.conf.aliases.forEach(alias => {
+      client.aliases.set(alias, props.help.name);
+    });
+  });
+});
 
 client.reload = command => {
   return new Promise((resolve, reject) => {
@@ -1676,7 +1689,142 @@ client.on("guildMemberAdd", async member => {
 //////////////////////////
 
 
+client.on("guildMemberAdd", async member => {
+  let channel = client.channels.get("654324391282475009");
+  channel.setName("Son Üyemiz: " + member.user.username);
+});
 
+////////////////////////////////////////////////////////////////////////////
+
+client.on("message", message => {
+    if (message.channel.type === "dm") {
+        if (message.author.bot) return;
+        const dmlog = new Discord.RichEmbed()
+         .setTitle(`${client.user.username}'a Özelden Mesaj Gönderildi!`)
+         .setColor('RANDOM')
+         .addField('Mesajı Gönderen',` \`\`\` ${message.author.tag} \`\`\` `)
+         .addField('Mesajı Gönderenin ID', ` \`\`\`${message.author.id}\`\`\` `)
+         .addField(`Gönderilen Mesaj`, message.content)
+         .setThumbnail(message.author.avatarURL) 
+    client.channels.get("654963445111717910").send(dmlog);
+    }
+});
+
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  
+  
+ 
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    if (db.has(`dKanal_${member.guild.id}`) === false) return
+    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+    const davetçi = client.users.get(invite.inviter.id);
+     db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
+let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
+   member.guild.channels.get(channel).send(`:inbox_tray: ** <@${member.id}> Joined**; İnvited by **${davetçi.tag}** (`+'**'+bal+'** invites)')
+  })
+
+});
+client.on('guildMemberRemove', member => {
+   
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    if (db.has(`dKanal_${member.guild.id}`) === false) return
+    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+    const davetçi = client.users.get(invite.inviter.id);
+ 
+    
+   
+   const embed = new Discord.RichEmbed()
+   
+        .setColor("#01CFFE")
+        .setDescription(`<@` + `${davetçi.tag}` + `> tarafından davet edilen. ${member.user.tag} sunucudan ayrıldı!`)
+   member.guild.channels.get(channel).send(embed)
+    
+    member.guild.fetchInvites().then(guildInvites => {
+    invites[member.guild.id] = guildInvites;
+        db.subtract(`davet_${invite.inviter.id + member.guild.id}`,1)
+    })
+})
+})
+client.on("ready", async () => {
+  client.appInfo = await client.fetchApplication();
+  setInterval(async () => {
+    client.appInfo = await client.fetchApplication();
+  },10000);
+
+ 
+
+  console.log(
+    `${chalk.green(client.user.username)}${chalk.red(",")} ${chalk.blue(
+      client.guilds.size
+    )} ${chalk.yellow("Sunucu'ya")} ${chalk.red("ve")} ${chalk.blue(
+      client.users.size.toLocaleString()
+    )} ${chalk.yellow("Kullanıcı'ya")} ${chalk.red("hizmet veriyor!")}`
+  );
+  client.user.setStatus("online");
+  client.user.setActivity(``, { type: "PLAYING" });
+  let embed = new Discord.RichEmbed()
+    .setTitle("**Maximus Boys*")
+    .setDescription(
+      `**Bot aktif!** \n Botu açılış itibariyle şuan; **${
+        client.guilds.size
+      }** sunucu\n**${client.guilds
+        .reduce((a, b) => a + b.memberCount, 0)
+        .toLocaleString() + ``}** kullanıcı kullanıyor!`
+    )
+    .setTimestamp()
+    .setThumbnail(client.user.avatarURL)
+    .setColor("40bcdb")
+    .setFooter(`${client.user.username} `, client.user.avatarURL);
+  client.channels.get("654963445111717910").send(embed); //mesaj göndereceği kanal
+});
+
+//////////////////////////////////////////////Bot DM Görme/////////////////////////////////////////////////////////
+client.on("message", message => {
+    if (message.channel.type === "dm") {
+        if (message.author.bot) return;
+        const dmlog = new Discord.RichEmbed()
+         .setTitle(`${client.user.username}'a Özelden Mesaj Gönderildi!`)
+         .setColor('RANDOM')
+         .addField('Mesajı Gönderen',` \`\`\` ${message.author.tag} \`\`\` `)
+         .addField('Mesajı Gönderenin ID', ` \`\`\`${message.author.id}\`\`\` `)
+         .addField(`Gönderilen Mesaj`, message.content)
+         .setThumbnail(message.author.avatarURL) 
+    client.channels.get("654963445111717910").send(dmlog);
+    }
+});
+
+////////////////////kanal Koruma///////////////////////////////
 client.on("channelDelete", async function(channel) {
   
   let logs = await channel.guild.fetchAuditLogs({type: 'CHANNEL_DELETE'});
@@ -1908,60 +2056,3 @@ client.on("guildMemberRemove", async(member) => {
   }
 })
 
-
-
-/////////////////////////////////////////////////////////////////////////////////
-
-client.on("guildMemberAdd", async member => {
-   const fs = require('fs');
-    let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog.json", "utf8"));
-    const gözelkanal = member.guild.channels.get(gkanal[member.guild.id].resim)
-    if (!gözelkanal) return;
-     let username = member.user.username;
-        if (gözelkanal === undefined || gözelkanal === null) return;
-        if (gözelkanal.type === "text") {
-            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/662339098895319070/663314614225993729/giris.jpg");
-            const userimg = await Jimp.read(member.user.avatarURL);
-            var font;
-            if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 300, 300, member.user.tag);
-            await userimg.resize(187, 169);////boyut
-            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
-              setTimeout(function () {
-                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              }, 10000);
-        }
-    })
-
-client.on("guildMemberRemove", async member => {
-   const fs = require('fs');
-    let gkanal = JSON.parse(fs.readFileSync("./ayarlar/glog1.json", "utf8"));
-    const gözelkanal = member.guild.channels.get(gkanal[member.guild.id].resim)
-    if (!gözelkanal) return;
-        let username = member.user.username;
-        if (gözelkanal === undefined || gözelkanal === null) return;
-        if (gözelkanal.type === "text") {            
-                        const bg = await Jimp.read("https://cdn.discordapp.com/attachments/662339098895319070/663315270475055116/cikis.jpg");
-            const userimg = await Jimp.read(member.user.avatarURL);
-            var font;
-             if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-            else if (member.user.tag.length > 0) font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
-            await bg.print(font, 300, 300, member.user.tag);
-            await userimg.resize(189, 173);////boyut
-            await bg.composite(userimg, 317, 15).write("./img/"+ member.id + ".png");///sağa sola, yukarı aşşa
-              setTimeout(function () {
-                    gözelkanal.send(new Discord.Attachment("./img/" + member.id + ".png"));
-              }, 1000);
-              setTimeout(function () {
-                fs.unlink("./img/" + member.id + ".png");
-              }, 10000);
-        }
-    })
-
-//////////////////////////////////////////
