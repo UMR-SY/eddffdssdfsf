@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
         .setAuthor(`${client.user.username} `, client.user.avatarURL)
         .setColor('0x36393E')
         .setTitle(`${client.user.username} - Komutlar`)
-        .setDescription(` | **${ayarlar.prefix}yetkili** Yetkili Komutları.\n  | **${ayarlar.prefix}kullanıcı** Kullanıcıya Komutları.\n  |  **${ayarlar.prefix}eğlence** Eğlence Komutları.\n  | **${ayarlar.prefix}oyun**  Oyun Komutları Gösterir.\n` + `| **${ayarlar.prefix}seviyeyardım**  Seviyeyardım Komutları Gösterir.\n`)  
+        .setDescription(`<a:dc:660744361314615297> | **${ayarlar.prefix}yetkili** Yetkili Komutları.\n <a:dc:660744361314615297> | **${ayarlar.prefix}kullanıcı** Kullanıcıya Komutları.\n <a:dc:660744361314615297> |  **${ayarlar.prefix}eğlence** Eğlence Komutları.\n  <a:dc:660744361314615297>| **${ayarlar.prefix}oyun**  Oyun Komutları Gösterir.\n` + `<a:dc:660744361314615297>| **${ayarlar.prefix}seviyeyardım**  Seviyeyardım Komutları Gösterir.\n`)  
         .setThumbnail(client.user.avatarURL)
         .addField(`» Linkler`, `[Bot Davet Linki](https://discordapp.com/oauth2/authorize?client_id=602024501710159882&scope=bot&permissions=8) **|** [Destek Sunucusu](https://discord.gg/aEUfsU9) **|** [Web Sitesi](https://topbots-tr.glitch.me/)`)//websiteniz yoksa  **|** [Web Sitesi]() yeri silebilirsiniz
         .setFooter(`${message.author.username} Tarafından İstendi.`, message.author.avatarURL)
