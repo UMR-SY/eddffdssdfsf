@@ -2094,7 +2094,7 @@ client.on("guildMemberRemove", async member => {
         let username = member.user.username;
         if (gözelkanal === undefined || gözelkanal === null) return;
         if (gözelkanal.type === "text") {            
-                        const bg = await Jimp.read("https://cdn.discordapp.com/attachments/594583488787644447/595138392216436746/gorusuruz.png");
+                        const bg = await Jimp.read("");
             const userimg = await Jimp.read(member.user.avatarURL);
             var font;
              if (member.user.tag.length <10) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
