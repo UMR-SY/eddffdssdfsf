@@ -18,7 +18,7 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['oylamakanal'],
-    permLevel: 0,
+    permLevel: 2,
     kategori: "yetkili"
 }
 

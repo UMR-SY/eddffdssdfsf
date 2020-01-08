@@ -30,7 +30,7 @@ exports.conf = {
  enabled: true,
  guildOnly: false,
  aliases: ['oylama-yap', 'oylamayap', 'oylamalar'],
- permLevel: 0,
+ permLevel: 2,
  kategori: "yetkili"
 };
 
