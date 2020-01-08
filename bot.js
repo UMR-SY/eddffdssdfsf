@@ -1853,7 +1853,7 @@ client.on("channelDelete", async function(channel) {
       }
     if (cfxk === 1) {
     let cfxu = new Discord.RichEmbed()
-                .setTitle(`**Maximus Boys|MB Kanal Koruma Sistemi**`)
+                .setTitle(`**Maximus Boys| MB Kanal Koruma Sistemi**`)
         .setColor("#00ff88")
         .setFooter(``)
         .setDescription(`<@${channel.guild.member(logs.entries.first().executor).id}> Kanal Koruma Sistemi Devrede. **Sildiği Kanal:** \`${channel.name}\` **Uyarı (2/3)**`)
