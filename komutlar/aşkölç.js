@@ -1,5 +1,5 @@
 exports.run = async (client, msg, args) => {
-    let ask=[
+    let asreaper=[
       "Aşkölçer %3 Gösteriyor.",
       "Aşkölçer %6 Gösteriyor.",
       "Aşkölçer %9 Gösteriyor.",
@@ -35,7 +35,7 @@ exports.run = async (client, msg, args) => {
       let member = msg.mentions.members.first()
      if(!member)return msg.channel.send({embed: {
    color: Math.floor(Math.random() * (0xFFFFFF + 1)),
-   description: (':no_entry_sign: Kimi Seviyorsun?')
+   description: ("")
   }});
   
   
@@ -43,7 +43,7 @@ exports.run = async (client, msg, args) => {
     else{
     msg.channel.send({embed: {
    color: Math.floor(Math.random() * (0xFFFFFF + 1)),
-   description: (`${member} ${ask[Math.floor(Math.random() * 30)]}.`)
+   description: (`${member} ${asreaper[Math.floor(Math.random() * 30)]}.`)
     }})
     }
   
@@ -58,7 +58,7 @@ exports.run = async (client, msg, args) => {
    };
   
   exports.help = {
-    name: 'aşkölç',
-    description: 'Aşk Ölçmeni sağlar.',
+    name: 'aşk-ölç',
+    description: 'Asreaper Aşk Ölç Komutu.',
     usage: 'aşkölç'
    }
