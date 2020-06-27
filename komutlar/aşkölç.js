@@ -35,7 +35,7 @@ exports.run = async (client, msg, args) => {
       let member = msg.mentions.members.first()
      if(!member)return msg.channel.send({embed: {
    color: Math.floor(Math.random() * (0xFFFFFF + 1)),
-   description: ("")
+   description: ("Aşkına Düşkün Müsün ?")
   }});
   
   
