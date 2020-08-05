@@ -37,6 +37,6 @@ exports.conf = {
 
 exports.help = {
     name: 'girişmesaj',
-    description: 'Mizy Giriş mesajını ayarlar. (Kullanıcı isminin geleceği yere "-kullanıcı-", sunucu isminin geleceği yere "-sunucu-" yazınız.)',
+    description: '(Kullanıcı isminin geleceği yere "-kullanıcı-", sunucu isminin geleceği yere "-sunucu-" yazınız.)',
     usage: 'girişmesaj <yazı>'
 }
