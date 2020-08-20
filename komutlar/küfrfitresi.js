@@ -8,12 +8,12 @@ exports.run = async (bot, message, args) => {
   
   if (args[0] == 'aç') {
     db.set(`kufur_${message.guild.id}`, 'acik') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onayland:660744428025282600> Küfür Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Küfürü Engellenmicektir.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(' Küfür Engel Başarıyla Açıldı! `Üyeleri Yasakla` Yetkisine Sahip Olanların Küfürü Engellenmicektir.').setColor("RANDOM"));
     
   }
   if (args[0] == 'kapat') {
     db.set(`kufur_${message.guild.id}`, 'kapali') 
-     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription('<a:onayland:660744428025282600> Küfür Filtresi Başarıyla Kapatıldı.').setColor("RANDOM"));
+     return message.channel.sendEmbed(new Discord.RichEmbed().setDescription(' Küfür Filtresi Başarıyla Kapatıldı.').setColor("RANDOM"));
     
   }
 

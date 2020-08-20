@@ -10,11 +10,11 @@ exports.run = async (client, message, args) => {
   
   
   if (!rol) {
-    return message.channel.send(`<a:onaylanmad:660744451760586762> Otorol olarak ayarlamak istediğin rolü etiketlemelisin.`)
+    return message.channel.send(` Otorol olarak ayarlamak istediğin rolü etiketlemelisin.`)
     }
   
   if (!rolk) {
-    message.channel.send(`<a:onaylanmad:660744451760586762> Otorol kanalını etiketlemelisin.`)
+    message.channel.send(` Otorol kanalını etiketlemelisin.`)
   }
   
   if (!rolk) return;
@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
   db.set(`otorol_${message.guild.id}`, rol.name)
   db.set(`rolK_${message.guild.id}` ,rolk.name)
   
-    message.channel.send(`<a:onayland:660744428025282600> Otorol \`${rol.name}\`, otorol kanalı #${rolk.name} olarak ayarlandı.`)
+    message.channel.send(`Otorol \`${rol.name}\`, otorol kanalı #${rolk.name} olarak ayarlandı.`)
   
   };
 
