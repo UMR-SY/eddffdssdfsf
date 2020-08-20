@@ -37,6 +37,6 @@ exports.conf = {
 
 exports.help = {
     name: 'çıkışmesaj',
-    description: 'Mizy Çıkış mesajını ayarlar. (Kullanıcı isminin geleceği yere "-kullanıcı-", sunucu isminin geleceği yere "-sunucu-" yazınız.)',
+    description: ' Çıkış mesajını ayarlar. (Kullanıcı isminin geleceği yere "-kullanıcı-", sunucu isminin geleceği yere "-sunucu-" yazınız.)',
     usage: 'çıkışmesaj <yazı>'
 }

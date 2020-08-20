@@ -21,6 +21,6 @@ exports.conf = {
 
 exports.help = {
     name: 'katıl',
-    description: 'Log kanalını belirler.',
-    usage: '&kanal <#kanal>'
+    description: '',
+    usage: ''
 }

@@ -14,6 +14,7 @@ exports.run = async (client, message, args) => {
   
   user.setNickname(`${isim} | ${yas}`)
   user.addRole(662328771356917761)
+  user.removeRole(662328771356917761)
   message.channel.send(`${message.author} Sunucuya Kaydoldun !`)
 };
 
